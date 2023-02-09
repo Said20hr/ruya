@@ -29,33 +29,38 @@
             <nav class="nav-footer">
                 <p class="nav-footer-social-buttons">
                     @if(setting('site.INSTAGRAM_LINK'))
-                        <a class="fa-icon" href="{{setting('site.INSTAGRAM_LINK')}}" title="">
+                        <a class="fa-icon" href="{{setting('site.INSTAGRAM_LINK')}}" title="" target="_blank">
                             <i class="fa fa-instagram"></i>
                         </a>
                     @endif
                         @if(setting('site.TWITTER_LINK'))
-                            <a class="fa-icon" href="{{setting('site.TWITTER_LINK')}}" title="">
+                            <a class="fa-icon" href="{{setting('site.TWITTER_LINK')}}" title="" target="_blank">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         @endif
                         @if(setting('site.LINKEDIN_LINK'))
-                            <a class="fa-icon" href="{{setting('site.LINKEDIN_LINK')}}" title="">
+                            <a class="fa-icon" href="{{setting('site.LINKEDIN_LINK')}}" title="" target="_blank">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         @endif
                         @if(setting('site.DRIBBLE_LINK'))
-                            <a class="fa-icon" href="{{setting('site.DRIBBLE_LINK')}}" title="">
+                            <a class="fa-icon" href="{{setting('site.DRIBBLE_LINK')}}" title="" target="_blank">
                                 <i class="fa fa-dribbble"></i>
                             </a>
                         @endif
                         @if(setting('site.BEHANCE_LINK'))
-                            <a class="fa-icon" href="{{setting('site.BEHANCE_LINK')}}" title="">
+                            <a class="fa-icon" href="{{setting('site.BEHANCE_LINK')}}" title="" target="_blank">
                                 <i class="fa fa-behance"></i>
                             </a>
                         @endif
                         @if(setting('site.YOUTUBE_LINK'))
-                            <a class="fa-icon" href="{{setting('site.YOUTUBE_LINK')}}" title="">
+                            <a class="fa-icon" href="{{setting('site.YOUTUBE_LINK')}}" title="" target="_blank">
                                 <i class="fa fa-youtube"></i>
+                            </a>
+                        @endif
+                        @if(setting('site.PINTEREST_LINK'))
+                            <a class="fa-icon" href="{{setting('site.PINTEREST_LINK')}}" title="" target="_blank">
+                                <i class="fa fa-pinterest"></i>
                             </a>
                         @endif
                 </p>

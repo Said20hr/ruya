@@ -86,18 +86,23 @@
                             </ul>
                             <h3>{{__('Follow me on social networks')}}</h3>
                             @if(setting('site.INSTAGRAM_LINK'))
-                                <a class="fa-icon" href="{{setting('site.INSTAGRAM_LINK')}}" title="">
+                                <a class="fa-icon" href="{{setting('site.INSTAGRAM_LINK')}}" target="_blank">
                                     <i class="fa fa-instagram"></i>
                                 </a>
                             @endif
                             @if(setting('site.TWITTER_LINK'))
-                                <a class="fa-icon" href="{{setting('site.TWITTER_LINK')}}" title="">
+                                <a class="fa-icon" href="{{setting('site.TWITTER_LINK')}}" target="_blank">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             @endif
                             @if(setting('site.LINKEDIN_LINK'))
                                 <a class="fa-icon" href="{{setting('site.LINKEDIN_LINK')}}" target="_blank">
                                     <i class="fa fa-linkedin"></i>
+                                </a>
+                            @endif
+                            @if(setting('site.FACEBOOK_LINK'))
+                                <a class="fa-icon" href="{{setting('site.FACEBOOK_LINK')}}" target="_blank">
+                                    <i class="fa fa-facebook"></i>
                                 </a>
                             @endif
                         </div>

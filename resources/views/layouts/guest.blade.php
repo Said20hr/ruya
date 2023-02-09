@@ -13,7 +13,7 @@
     <meta name="googlebot" content="index, follow">
     <meta name="author" content="{{setting('site.author')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Ruya Studio}}</title>
+    <title>Ruya Studio | Creative Motion and web Agency</title>
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
     <!-- Fonts -->
