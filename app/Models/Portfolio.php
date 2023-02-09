@@ -12,5 +12,8 @@ class Portfolio extends Model
         'category_id','title','slug','arabic_title','
         french_title','link','primary_image','additional_images',
         'description','arabic_description','french_description',
-        ];
+        'excerpt','arabic_excerpt','french_excerpt'
+    ];
+
+
 }

@@ -1,6 +1,14 @@
 <x-guest-layout>
     <div class="row">
         <div class="col-xs-12">
+            @if (session('success_message'))
+                <div class="duration-800 transition-opacity pb-6 text-center mt-12">
+                    <img src="{{asset('assets/images/mail.webp')}}" alt="thank you" class="w-1/2 mx-auto" >
+                    <div class="text-cyan-700 text-3xl pb-6">
+                        {{ __( session('success_message') ) }}
+                    </div>
+                </div>
+            @else
             <div class="section-container-spacer">
                 <h1>{{__('Contact')}}</h1>
                 <p>{{__('Need to get in touch with Ruya Studio?')}} <br>
@@ -35,52 +43,60 @@
                         </div>
                         <div class="col-md-6">
                             <ul class="list-unstyled address-container">
-                                @if(env('PHONE_ONE'))
+                                @if(setting('site.Email'))
                                 <li>
                                     <span class="fa-icon">
                                         <i class="fa fa-at" aria-hidden="true"></i>
                                     </span>
-                                    {{env('PHONE_ONE')}}
+                                    {{setting('site.Email')}}
                                 </li>
                                 @endif
-                                    @if(env('PHONE_TWO'))
+                                    @if(setting('site.PHONE_ONE'))
+                                        <li>
+                                            <span class="fa-icon">
+                                                <i class="fa fa-at" aria-hidden="true"></i>
+                                            </span>
+                                            {{setting('site.PHONE_ONE')}}
+                                        </li>
+                                    @endif
+                                    @if(setting('site.PHONE_TWO'))
                                         <li>
                                     <span class="fa-icon">
                                         <i class="fa fa-at" aria-hidden="true"></i>
                                     </span>
-                                            {{env('PHONE_TWO')}}
+                                            {{setting('site.PHONE_TWO')}}
                                         </li>
-                                @endif
-                                @if(env('ADDRESS_ONE'))
+                                    @endif
+                                @if(setting('site.ADDRESS_ONE'))
                                 <li>
                                     <span class="fa-icon">
                                         <i class="fa fa fa-map-marker" aria-hidden="true"></i>
                                     </span>
-                                    {{env('ADDRESS_ONE')}}
+                                    {{setting('site.ADDRESS_ONE')}}
                                 </li>
                                 @endif
-                                @if(env('ADDRESS_TWO'))
+                                @if(setting('site.ADDRESS_TWO'))
                                     <li>
                                     <span class="fa-icon">
                                         <i class="fa fa fa-map-marker" aria-hidden="true"></i>
                                     </span>
-                                        {{env('ADDRESS_TWO')}}
+                                        {{setting('site.ADDRESS_TWO')}}
                                     </li>
                                 @endif
                             </ul>
                             <h3>{{__('Follow me on social networks')}}</h3>
-                            @if(env('INSTAGRAM_LINK'))
-                                <a class="fa-icon" href="{{env('INSTAGRAM_LINK')}}" title="">
+                            @if(setting('site.INSTAGRAM_LINK'))
+                                <a class="fa-icon" href="{{setting('site.INSTAGRAM_LINK')}}" title="">
                                     <i class="fa fa-instagram"></i>
                                 </a>
                             @endif
-                            @if(env('TWITTER_LINK'))
-                                <a class="fa-icon" href="{{env('TWITTER_LINK')}}" title="">
+                            @if(setting('site.TWITTER_LINK'))
+                                <a class="fa-icon" href="{{setting('site.TWITTER_LINK')}}" title="">
                                     <i class="fa fa-twitter"></i>
                                 </a>
                             @endif
-                            @if(env('LINKEDIN_LINK'))
-                                <a class="fa-icon" href="{{env('LINKEDIN_LINK')}}" title="">
+                            @if(setting('site.LINKEDIN_LINK'))
+                                <a class="fa-icon" href="{{setting('site.LINKEDIN_LINK')}}" target="_blank">
                                     <i class="fa fa-linkedin"></i>
                                 </a>
                             @endif
@@ -88,6 +104,7 @@
                     </div>
                 </form>
             </div>
+            @endif
         </div>
     </div>
 </x-guest-layout>

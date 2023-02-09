@@ -17,20 +17,7 @@ class Role
      */
     public function handle(Request $request, Closure $next,Request $role)
     {
-        if (Auth::check())
-        {
-            if ($role == 'admin' )
-            {
-                // for admin
-                return auth()->user()->getRoleNames()->contains('admin') ? $next($request) : abort(404);
-            }
-            if ($role == 'user' )
-            {
-                // for users
-                auth()->user()->getRoleNames()->contains('user') ? $next($request) : abort(404);
-                //
-            }
-        }
+
         return $next($request);
     }
 }

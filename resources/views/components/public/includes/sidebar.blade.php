@@ -28,38 +28,38 @@
 
             <nav class="nav-footer">
                 <p class="nav-footer-social-buttons">
-                    @if(env('INSTAGRAM_LINK'))
-                        <a class="fa-icon" href="{{env('INSTAGRAM_LINK')}}" title="">
+                    @if(setting('site.INSTAGRAM_LINK'))
+                        <a class="fa-icon" href="{{setting('site.INSTAGRAM_LINK')}}" title="">
                             <i class="fa fa-instagram"></i>
                         </a>
                     @endif
-                        @if(env('TWITTER_LINK'))
-                            <a class="fa-icon" href="{{env('TWITTER_LINK')}}" title="">
+                        @if(setting('site.TWITTER_LINK'))
+                            <a class="fa-icon" href="{{setting('site.TWITTER_LINK')}}" title="">
                                 <i class="fa fa-twitter"></i>
                             </a>
                         @endif
-                        @if(env('LINKEDIN_LINK'))
-                            <a class="fa-icon" href="{{env('LINKEDIN_LINK')}}" title="">
+                        @if(setting('site.LINKEDIN_LINK'))
+                            <a class="fa-icon" href="{{setting('site.LINKEDIN_LINK')}}" title="">
                                 <i class="fa fa-linkedin"></i>
                             </a>
                         @endif
-                        @if(env('DRIBBLE_LINK'))
-                            <a class="fa-icon" href="{{env('DRIBBLE_LINK')}}" title="">
+                        @if(setting('site.DRIBBLE_LINK'))
+                            <a class="fa-icon" href="{{setting('site.DRIBBLE_LINK')}}" title="">
                                 <i class="fa fa-dribbble"></i>
                             </a>
                         @endif
-                        @if(env('BEHANCE_LINK'))
-                            <a class="fa-icon" href="{{env('BEHANCE_LINK')}}" title="">
+                        @if(setting('site.BEHANCE_LINK'))
+                            <a class="fa-icon" href="{{setting('site.BEHANCE_LINK')}}" title="">
                                 <i class="fa fa-behance"></i>
                             </a>
                         @endif
-                        @if(env('YOUTUBE_LINK'))
-                            <a class="fa-icon" href="{{env('YOUTUBE_LINK')}}" title="">
+                        @if(setting('site.YOUTUBE_LINK'))
+                            <a class="fa-icon" href="{{setting('site.YOUTUBE_LINK')}}" title="">
                                 <i class="fa fa-youtube"></i>
                             </a>
                         @endif
                 </p>
-                <p>© 2023 Copyright | Ruya Studio</p>
+                <p>Copyright &copy; {{ date('Y') }} Ruya Studio <br> All Rights Reserved</p>
             </nav>
         </div>
     </nav>

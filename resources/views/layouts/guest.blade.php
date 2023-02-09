@@ -6,13 +6,14 @@
     <meta charset="UTF-8">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
     <meta content="width=device-width,initial-scale=1" name="viewport">
-
-    <meta content="" name="description">
-    <meta name="google" content="" />
-    <meta content="" name="author">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="{{setting('site.keywords')}}">
+    <meta name="description" content="{{setting('site.description')}}">
+    <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow">
+    <meta name="author" content="{{setting('site.author')}}">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Ruya Studio | {{$title ?? ''}}</title>
+    <title>Ruya Studio}}</title>
     <!-- Disable tap highlight on IE -->
     <meta name="msapplication-tap-highlight" content="no">
     <!-- Fonts -->

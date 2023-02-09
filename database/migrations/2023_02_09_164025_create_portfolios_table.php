@@ -23,6 +23,9 @@ return new class extends Migration
             $table->string('link')->nullable();
             $table->text('primary_image')->nullable();
             $table->text('additional_images')->nullable();
+            $table->string('excerpt')->nullable();
+            $table->string('arabic_excerpt')->nullable();
+            $table->string('french_excerpt')->nullable();
             $table->text('description')->nullable();
             $table->text('arabic_description')->nullable();
             $table->text('french_description')->nullable();

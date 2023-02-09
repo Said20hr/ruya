@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -34,7 +35,20 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $request->validate([
+            'email' => 'required|email',
+            'name' => 'required|string',
+            'subject' => 'required|string',
+            'message' => 'required|string',
+        ]);
+        Contact::create([
+            'email' => $request->email,
+            'name' =>  $request->name,
+            'subject' =>  $request->subject,
+            'message' =>  $request->message,
+        ]);
+
+        return redirect()->back()->with('success_message', 'We have received your message and will respond to you as soon as possible.');
     }
 
     /**
