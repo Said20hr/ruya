@@ -1,3 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+body
+{
+    font-family: Cabin, Helvetica, Arial, sans-serif !important;
+}
+p{
+    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.78;
+    color: #555;
+    background-color: #fff;
+}
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 8px 20px;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #000;
+    border-radius: 2px;
+    -webkit-box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    -webkit-transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+textarea.form-control {
+    height: auto;
+}
+.fa-icon
+{
+    color: #000;
+    line-height: 32px;
+    font-size: 15px;
+    text-align: center;
+}
+.btn-primary
+{
+    @apply inline-flex items-center px-4 py-1.5 bg-red-400 border border-transparent rounded-full text-sm text-white uppercase tracking-widest hover:bg-red-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
+}
+.btn-primary-outline
+{
+    @apply inline-flex items-center px-4 py-1.5 border-red-400 border bg-white rounded-full text-sm text-red-500 uppercase tracking-widest hover:bg-red-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
+}
+iframe
+{
+    max-width: 100% !important;
+    max-height: 100% !important;
+    border-radius : 13px
+}
+[x-cloack]
+{
+    display: none ;
+}
+.grid-item .project-description .project-text-holder .project-text-inner {
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}

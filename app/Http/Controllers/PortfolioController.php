@@ -37,7 +37,7 @@ class PortfolioController extends Controller
         $category = Service::where('slug','motion')->first();
         if ($category)
         {
-            $projects = Portfolio::where('category_id',$category->id)->get();
+            $projects = Portfolio::where('category_id',$category->id)->orderBy('created_at','desc')->get();
         }
         return view('public.motion',compact('projects'));
     }

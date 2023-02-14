@@ -1,27 +1,25 @@
-<x-guest-layout>
-    <div class="row">
-        <div class="col-xs-12 col-md-8">
-
-            <div class="section-container-spacer">
-                <h1>{{$project->title}}</h1>
-                <p>{{$project->excerpt}}</p>
-            </div>
-
-            <div class="section-container-spacer">
-                <p><img class="img-responsive" alt="" src="{{asset('storage/'.$project->primary_image)}}"></p>
-                <div class="row">
-                    @if($project->additional_images)
-                    @foreach( json_decode($project->additional_images,true) as $image)
-                    <div class="col-xs-12 col-md-6">
-                        <p><img class="img-responsive" alt="{{$image}}" src="{{asset('storage/'.$image)}}"></p>
-                    </div>
-                    @endforeach
-                    @endif
-                </div>
-            </div>
-
-            {!! $project->description  !!}
+<x-guest-layout title="{{$project->title}}">
+    <div class="container w-full min-h-screen xl:p-8 p-2">
+        <div class="mb-10">
+            <h2 class="mb-2">{{$project->title}}</h2>
+            <p>{{$project->excerpt}}</p>
         </div>
-
+        <div class="mb-12">
+            <img class="w-1/3 h-1/3 rounded-md shadow object-cover" alt="" src="{{asset('storage/'.$project->primary_image)}}">
+        </div>
+        @if($project->additional_images)
+        <section class="inline-block py-2 px-4 bg-gray-200 rounded-md h-full w-full">
+            <div class="grid xl:grid-cols-3 grid-cols-1 gap-6 mt-4 !h-full">
+                @foreach( json_decode($project->additional_images,true) as $image)
+                    <img class="rounded-md shadow-sm mb-4 object-cover w-full 2xl:max-w-[360px] border xl:max-w-[300px] border border-gray-100 xl:h-full" alt="{{$image}}" src="{{asset('storage/'.$image)}}">
+                @endforeach
+            </div>
+        </section>
+        @endif
+        <div class="container max-w-7xl">
+                <p class="">
+                    {!! $project->description  !!}
+                </p>
+            </div>
     </div>
 </x-guest-layout>

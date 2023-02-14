@@ -12,7 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+Voyager::routes();
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
 Route::get('/',[\App\Http\Controllers\PortfolioController::class,'visuals'])->name('visuals');
 Route::get('/dev',[\App\Http\Controllers\PortfolioController::class,'dev'])->name('dev');
 Route::get('/motion',[\App\Http\Controllers\PortfolioController::class,'motion'])->name('motion');
@@ -32,6 +35,4 @@ Route::middleware([
 });
 
 
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
-});
+
