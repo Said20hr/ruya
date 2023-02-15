@@ -26,15 +26,14 @@
 
 
 
-    <!-- CSS Files -->
-    <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
+
     <!-- App CSS -->
     <link rel="stylesheet" href="{{ voyager_asset('css/app.css') }}">
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     {{-- --}}
 
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @yield('css')
     @if(__('voyager::generic.is_rtl') == 'true')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
@@ -73,12 +72,12 @@
         }
 
         .voyager .side-menu .navbar-header {
-            background: #692BD8;
-            border-color: #692BD8;
+            background: hsla(0,0%,98%,.9);
+            border-color: hsla(0,0%,98%,.9);
         }
 
         .widget .btn-primary {
-            border-color: #692BD8;
+            border-color: hsla(0,0%,98%,.9);
         }
 
         .widget .btn-primary:focus,
@@ -95,9 +94,8 @@
     </style>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-
     @yield('head')
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     @livewireStyles
 </head>
 
@@ -161,10 +159,17 @@ if (\Illuminate\Support\Str::startsWith(Auth::user()->avatar, 'http://') || \Ill
             </div>
         </div>
     </div>
-    @include('voyager::partials.app-footer')
+    <footer class="app-footer">
+        <div class="site-footer-right">
+            Made By  <i class="voyager-heart"></i>  with <a href="http://ruya.studio" target="_blank">Ruya Studio</a>
+
+        </div>
+    </footer>
 
     <!-- Javascript Libs -->
-
+    <!-- CSS Files -->
+    <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
+    <script src="{{ asset('assets/js/plugins/countup.min.js') }}"></script>
 
     <script type="text/javascript" src="{{ voyager_asset('js/app.js') }}"></script>
 

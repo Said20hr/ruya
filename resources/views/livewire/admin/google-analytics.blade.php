@@ -14,7 +14,7 @@
                 labels: labels,
                 datasets: [{
                     label: 'Visitors',
-                    tension: 0.4,
+                    tension: 1,
                     pointRadius: 2,
                     pointBackgroundColor: '#cb0c9f',
                     borderColor: '#cb0c9f',
@@ -22,7 +22,8 @@
                     backgroundColor: 'black',
                     data: visitors,
                     maxBarThickness: 6
-                }]
+                },
+                ]
             },
             options: {
                 responsive: true,
@@ -74,24 +75,16 @@
         myChart.update();
     })
     " >
-    <div class="w-full p-6 mx-auto" >
+    <div class="w-full p-6 mx-auto mt-6" >
         <div class="flex flex-wrap">
             <div class="w-full max-w-full px-3 shrink-0 md:flex-0 md:w-full lg:w-6/12">
-                <div class="relative flex flex-col min-w-0 break-words bg-white border dark:shadow-soft-dark-xl shadow-sm rounded-md bg-clip-border">
-                    <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-                        <h6 class="mb-0 dark:text-white">Traffic channels</h6>
+                <div class="relative break-words bg-white border border-gray-200 shadow-sm rounded-md">
+                    <div class="rounded-t-2xl border-b-0 border-solid p-4 pb-0">
+                        <h6 class="mb-0 dark:text-white">Google Analytics</h6>
                         <div class="flex items-center">
                             <span class="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
                                 <i class="rounded-circle mr-1.5 inline-block h-2 w-2 align-middle bg-fuchsia-500"></i>
-                                <span class="leading-tight dark:text-white text-slate-700 text-xs">Organic search</span>
-                            </span>
-                            <span class="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
-                                <i class="rounded-circle mr-1.5 inline-block h-2 w-2 align-middle bg-slate-700"></i>
-                                <span class="dark:text-white text-slate-700">Referral</span>
-                            </span>
-                            <span class="py-2.6 mr-6 rounded-1.8 text-sm inline-block whitespace-nowrap bg-transparent px-0 text-center align-baseline font-normal leading-none text-white">
-                                <i class="rounded-circle mr-1.5 inline-block h-2 w-2 align-middle bg-cyan-500"></i>
-                                <span class="dark:text-white text-slate-700">Social media</span>
+                                <span class="leading-tight dark:text-white text-slate-700 text-xs">Visitors</span>
                             </span>
                         </div>
                     </div>
@@ -112,25 +105,25 @@
             <div class="w-full max-w-full px-3 shrink-0 md:flex-0 md:w-full lg:w-6/12">
                 <div class="flex flex-wrap mb-6">
                     <div class="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
-                        <div class="border-black/12.5 dark:shadow-soft-dark-xl shadow-sm border  dark:bg-gray-950 relative flex min-w-0 flex-col break-words rounded-md border border-solid bg-white bg-clip-border">
+                        <div class="relative break-words rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-300 cursor-pointer">
                             <div class="flex-auto p-6 text-center">
                                 <h1 class="relative z-10 text-transparent bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text"><span id="status1" countTo="{{$totalVisitors}}">{{$totalVisitors}}</span></h1>
-                                <h6 class="mb-0 font-bold dark:text-white">Total visiteurs</h6>
+                                <h6 class="mb-0 font-bold dark:text-white">Total visitors</h6>
                             </div>
                         </div>
                     </div>
                     <div class="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
-                        <div class="border-black/12.5 dark:shadow-soft-dark-xl shadow-sm border  dark:bg-gray-950 relative flex min-w-0 flex-col break-words rounded-md border border-solid bg-white bg-clip-border">
+                        <div class="relative break-words rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-300 cursor-pointer">
                             <div class="flex-auto p-6 text-center">
                                 <h1 class="relative z-10 text-transparent bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text"><span id="status4" countTo="{{$newVisitors}}">{{$newVisitors}}</span></h1>
-                                <h6 class="mb-0 font-bold dark:text-white">New Users</h6>
+                                <h6 class="mb-0 font-bold dark:text-white">New visitors</h6>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="flex flex-wrap mb-6">
                     <div class="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
-                        <div class="border-black/12.5 dark:shadow-soft-dark-xl shadow-sm border  dark:bg-gray-950 relative flex min-w-0 flex-col break-words rounded-md border border-solid bg-white bg-clip-border">
+                        <div class="relative break-words rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-300 cursor-pointer">
                             <div class="flex-auto p-6 text-center">
                                 <h1 class="relative z-10 text-transparent bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text"><span id="status3" countTo="{{$totalReferrers}}">{{$totalReferrers}}</span></h1>
                                 <h6 class="mb-0 font-bold dark:text-white">Total Referrers</h6>
@@ -138,7 +131,7 @@
                         </div>
                     </div>
                     <div class="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
-                        <div class="border-black/12.5 dark:shadow-soft-dark-xl shadow-sm border  dark:bg-gray-950 relative flex min-w-0 flex-col break-words rounded-md border border-solid bg-white bg-clip-border">
+                        <div class="relative break-words rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-300 cursor-pointer">
                             <div class="flex-auto p-6 text-center">
                                 <h1 class="relative z-10 text-transparent bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text"><span id="status2" countTo="{{$totalPageviews}}">{{$totalPageviews}}</span></h1>
                                 <h6 class="mb-0 font-bold dark:text-white">Page viewed</h6>
@@ -146,16 +139,33 @@
                         </div>
                     </div>
                 </div>
+                <div class="flex flex-wrap mb-6">
+                    <div class="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
+                        <div class="relative break-words rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-300 cursor-pointer">
+                            <div class="flex-auto p-6 text-center">
+                                <h1 class="relative z-10 text-transparent bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text"><span id="status3" countTo="{{$totalCountries}}">{{$totalCountries}}</span></h1>
+                                <h6 class="mb-0 font-bold dark:text-white">Total Countries</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full max-w-full px-3 md:flex-0 shrink-0 md:w-6/12">
+                        <div class="relative break-words rounded-md border border-slate-300 bg-slate-50 hover:bg-slate-300 cursor-pointer">
+                            <div class="flex-auto p-6 text-center">
+                                <h1 class="relative z-10 text-transparent bg-gradient-to-tl from-purple-700 to-pink-500 bg-clip-text"><span id="status2" countTo="{{$totalSessions}}">{{$totalSessions}}</span></h1>
+                                <h6 class="mb-0 font-bold dark:text-white">Page Sessions</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-
         <div class="flex flex-wrap mt-6">
-            <div class="w-full max-w-full px-3 shrink-0 sm:flex-0 sm:w-6/12">
-                <div class="relative flex flex-col h-full min-w-0 break-words bg-white border dark:shadow-soft-dark-xl shadow-sm rounded-md bg-clip-border">
-                    <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
+            <div class="w-full max-w-full px-3 shrink-0 sm:flex-0 sm:w-5/12 ">
+                <div class="overflow-x-hidden relative break-words bg-white border border-gray-200 shadow-sm rounded-md">
+                    <div class="rounded-t-2xl p-4 pb-0">
                         <div class="flex items-center">
-                            <h6 class="mb-0 dark:text-white">Social</h6>
-                            <button type="button" class="active:shadow-soft-xs active:opacity-85 ease-soft-in leading-pro text-xs bg-150 bg-x-25 rounded-3.5xl p-1.2 h-6 w-6 mb-0 ml-auto flex cursor-pointer items-center justify-center border border-solid border-slate-400 bg-transparent text-center align-middle font-bold text-slate-400 shadow-none transition-all hover:bg-transparent hover:text-slate-400 hover:opacity-75 hover:shadow-none active:bg-slate-400 active:text-black hover:active:bg-transparent hover:active:text-slate-400 hover:active:opacity-75 hover:active:shadow-none" data-target="tooltip_trigger">
+                            <h6 class="mb-0 dark:text-white">Links</h6>
+                            <button type="button" class="active:shadow-soft-xs active:opacity-85 ease-soft-in leading-pro text-xs bg-150 bg-x-25 rounded-3.5xl p-1.2 h-6 w-6 mb-0 ml-auto flex cursor-pointer items-center justify-center border border-slate-600  border-slate-400 bg-transparent text-center align-middle font-bold text-slate-400 shadow-none transition-all hover:bg-transparent hover:text-slate-400 hover:opacity-75 hover:shadow-none active:bg-slate-400 active:text-black hover:active:bg-transparent hover:active:text-slate-400 hover:active:opacity-75 hover:active:shadow-none" data-target="tooltip_trigger">
                                 <i class="fas fa-info text-3xs"></i>
                             </button>
                             <div class="z-50 hidden px-2 py-1 text-center text-white bg-black rounded-lg max-w-46 text-sm" id="tooltip" role="tooltip" data-popper-placement="bottom">
@@ -212,18 +222,11 @@
                     </div>
                 </div>
             </div>
-            <div class="w-full max-w-full px-3 shrink-0 sm:flex-0 sm:w-6/12">
-                <div class="relative flex flex-col h-full min-w-0 break-words bg-white border md:mt-0  dark:shadow-soft-dark-xl shadow-sm rounded-md bg-clip-border">
-                    <div class="border-black/12.5 rounded-t-2xl border-b-0 border-solid p-4 pb-0">
+            <div class="w-full max-w-full px-6 shrink-0 sm:flex-0 sm:w-7/12">
+                <div class="overflow-x-hidden w-full relative break-words bg-white border border-gray-200 shadow-sm rounded-md">
+                    <div class="rounded-t-2xl border-b-0 border-solid p-4 pb-0">
                         <div class="flex items-center">
                             <h6 class="dark:text-white">Pages</h6>
-                            <button type="button" class="active:shadow-soft-xs active:opacity-85 ease-soft-in leading-pro text-xs bg-150 bg-x-25 rounded-3.5xl p-1.2 h-6 w-6 mb-0 ml-auto flex cursor-pointer items-center justify-center border border-solid border-lime-500 bg-transparent text-center align-middle font-bold text-lime-500 shadow-none transition-all hover:bg-transparent hover:text-lime-500 hover:opacity-75 hover:shadow-none active:bg-lime-500 active:text-black hover:active:bg-transparent hover:active:text-lime-500 hover:active:opacity-75 hover:active:shadow-none" data-target="tooltip_trigger">
-                                <i class="fas fa-check text-3xs"></i>
-                            </button>
-                            <div class="z-50 hidden px-2 py-1 text-center text-white bg-black rounded-lg max-w-46 text-sm" id="tooltip" role="tooltip" data-popper-placement="bottom">
-                                See how much traffic do you get from social media
-                                <div id="arrow" class="invisible absolute h-2 w-2 bg-inherit before:visible before:absolute before:h-2 before:w-2 before:rotate-45 before:bg-inherit before:content-['']" data-popper-arrow></div>
-                            </div>
                         </div>
                     </div>
                     <div wire:loading>
@@ -243,6 +246,7 @@
                                     <tr>
                                         <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page</th>
                                         <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page Views</th>
+                                        <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page Title</th>
                                         <th class="py-3 pl-2 pr-6 font-bold uppercase border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Bounce Rate</th>
                                     </tr>
                                     </thead>
@@ -250,12 +254,15 @@
                                     @foreach($pages as $page)
                                         <tr>
                                         <td class="p-2 align-middle border-b border-solid dark:border-white/40 whitespace-nowrap border-inherit">
-                                            <p class="mb-0 font-semibold leading-normal text-sm">https://ruya.studio/{{$page['url']}}</p>
+                                            <p class="mb-0 font-semibold leading-normal text-sm">{{$page['url']}}</p>
                                         </td>
 
                                         <td class="p-2 align-middle border-b border-solid dark:border-white/40 whitespace-nowrap border-inherit">
                                             <p class="mb-0 font-semibold leading-normal text-sm">{{$page['pageViews']}}</p>
                                         </td>
+                                            <td class="p-2 align-middle border-b border-solid dark:border-white/40 whitespace-nowrap border-inherit">
+                                                <p class="mb-0 font-semibold leading-normal text-sm">{{substr($page['pageTitle'], strpos($page['pageTitle'], '|') + 2) }}</p>
+                                            </td>
 
                                         <td class="p-2 align-middle border-b border-solid dark:border-white/40 whitespace-nowrap border-inherit">
                                             <p class="mb-0 font-semibold leading-normal text-sm">
@@ -272,9 +279,53 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="w-full max-w-full px-10 flex-0 mt-6">
+        <div class="relative break-words bg-white border border-gray-200 shadow-sm rounded-md">
+            <div class="p-6 pb-0 ">
+                <h6 class="dark:text-white">Top Countries</h6>
+            </div>
 
-
-
+            <div class="flex-auto pb-2">
+                <div class="p-0 overflow-x-auto">
+                    <table class="items-center justify-center w-full mb-0 align-top border-gray-200 text-slate-600">
+                        <thead class="align-bottom">
+                        <tr>
+                            <th class="py-3 pl-6 pr-6 font-bold uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Country</th>
+                            <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">isitors</th>
+                            <th class="py-3 pl-2 pr-6 font-bold text-center uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Pages views</th>
+                            <th class="py-3 pl-2 pr-6 font-bold text-center uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Sessions</th>
+                        </tr>
+                        </thead>
+                        <tbody class="align-top">
+                        @foreach($countries as $country)
+                            <tr>
+                                <td class="p-2 align-middle ">
+                                    <div class="flex items-center px-4 py-1">
+                                        <div class="">
+                                            <img class="inline-flex items-center justify-center w-9 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/{{strtolower($country['ga:country'])}}/flag-square-250.png" alt="">
+                                        </div>
+                                        <div class="flex flex-col justify-center">
+                                            <h6 class="my-0 pt-1 leading-normal dark:text-white text-sm">{{$country['ga:country']}}</h6>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="p-2 align-middle">
+                                    <p class="mb-0 font-semibold leading-normal text-sm">{{$country['ga:visitors']}}</p>
+                                </td>
+                                <td class="p-2 text-center align-middle">
+                                    <p class="mb-0 font-semibold leading-normal text-sm">{{$country['ga:pageviews']}}</p>
+                                </td>
+                                <td class="p-2 text-center align-middle">
+                                    <p class="mb-0 font-semibold leading-normal text-sm">{{$country['ga:sessions']}}</p>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
