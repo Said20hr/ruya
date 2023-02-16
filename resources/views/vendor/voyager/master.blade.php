@@ -26,14 +26,14 @@
 
 
 
-
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- App CSS -->
     <link rel="stylesheet" href="{{ voyager_asset('css/app.css') }}">
 
 
     {{-- --}}
 
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+
     @yield('css')
     @if(__('voyager::generic.is_rtl') == 'true')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.css">
