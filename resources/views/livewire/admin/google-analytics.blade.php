@@ -220,7 +220,7 @@
                                                             @break
                                                         @default
                                                             <i class="fa fa-global fa-lg"></i>
-                                                        @endswitch
+                                                    @endswitch
                                                 </a>
                                                 <span class="me-2 text-sm font-bold ms-2">{{ $referrer['url'] == "(direct)" ? 'https://ruya.studio': $referrer['url']  }}</span>
                                                 <span class="ms-auto text-sm font-bold pr-2 ">{{ $referrer['pageViews'] }}</span>
@@ -251,7 +251,7 @@
                                     <thead class="align-bottom">
                                     <tr>
                                         <th class="py-3 pl-6 pr-6 font-bold uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Country</th>
-                                        <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">isitors</th>
+                                        <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Visitors</th>
                                         <th class="py-3 pl-2 pr-6 font-bold text-center uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Pages views</th>
                                         <th class="py-3 pl-2 pr-6 font-bold text-center uppercase align-middle border-b border-gray-200 border-solid text-xxs text-slate-400 opacity-70 whitespace-nowrap tracking-none">Sessions</th>
                                     </tr>
@@ -289,61 +289,61 @@
             </div>
             <div class="w-full flex flex-wrap mb-6 mt-6">
                 <div class="w-full max-w-full px-3 shrink-0 sm:flex-0 sm:w-full">
-                <div class="overflow-x-hidden w-full relative break-words bg-white border border-gray-200 shadow-sm rounded-md">
-                    <div class="rounded-t-2xl border-b-0 border-solid p-4 pb-0">
-                        <div class="flex items-center">
-                            <h6 class="dark:text-white">Pages</h6>
+                    <div class="overflow-x-hidden w-full relative break-words bg-white border border-gray-200 shadow-sm rounded-md">
+                        <div class="rounded-t-2xl border-b-0 border-solid p-4 pb-0">
+                            <div class="flex items-center">
+                                <h6 class="dark:text-white">Pages</h6>
+                            </div>
                         </div>
-                    </div>
-                    <div wire:loading>
-                        <div class="flex justify-center items-center" style="height : 420px !important;">
-                            <svg aria-hidden="true" class="w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
-                                <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
-                            </svg>
-                            <span class="sr-only">Loading...</span>
+                        <div wire:loading>
+                            <div class="flex justify-center items-center" style="height : 420px !important;">
+                                <svg aria-hidden="true" class="w-20 h-20 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
+                                    <path d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z" fill="currentFill"/>
+                                </svg>
+                                <span class="sr-only">Loading...</span>
+                            </div>
                         </div>
-                    </div>
-                    <div wire:loading.remove>
-                        <div class="flex-auto px-4 pb-2">
-                            <div class="p-0 overflow-x-auto">
-                                <table class="items-center justify-center w-full mb-0 align-top border-gray-200 dark:text-white/80 text-slate-500">
-                                    <thead class="align-bottom">
-                                    <tr>
-                                        <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page</th>
-                                        <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page Views</th>
-                                        <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page Title</th>
-                                        <th class="py-3 pl-2 pr-6 font-bold uppercase border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Bounce Rate</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody class="align-top">
-                                    @foreach($pages as $page)
-                                        <tr class="{{$loop->last ? '' : 'border-b border-solid dark:border-white/40 whitespace-nowrap border-inherit'}}">
-                                            <td class="p-2 align-middle">
-                                                <p class="mb-0 font-semibold leading-normal text-sm">{{$page['url']}}</p>
-                                            </td>
-
-                                            <td class="p-2 align-middle ">
-                                                <p class="mb-0 font-semibold leading-normal text-sm">{{$page['pageViews']}}</p>
-                                            </td>
-                                            <td class="p-2 align-middle ">
-                                                <p class="mb-0 font-semibold leading-normal text-sm">{{substr($page['pageTitle'], strpos($page['pageTitle'], '|') + 2) }}</p>
-                                            </td>
-
-                                            <td class="p-2 align-middle ">
-                                                <p class="mb-0 font-semibold leading-normal text-sm">
-                                                    {{ round($page['pageViews'] / $totalPages * 100 , 1) }}%
-                                                </p>
-                                            </td>
+                        <div wire:loading.remove>
+                            <div class="flex-auto px-4 pb-2">
+                                <div class="p-0 overflow-x-auto">
+                                    <table class="items-center justify-center w-full mb-0 align-top border-gray-200 dark:text-white/80 text-slate-500">
+                                        <thead class="align-bottom">
+                                        <tr>
+                                            <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page</th>
+                                            <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page Views</th>
+                                            <th class="py-3 pl-2 pr-6 font-bold uppercase align-middle border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Page Title</th>
+                                            <th class="py-3 pl-2 pr-6 font-bold uppercase border-gray-200 border-solid text-xxs text-slate-400 opacity-90 whitespace-nowrap tracking-none">Bounce Rate</th>
                                         </tr>
-                                    @endforeach
-                                    </tbody>
-                                </table>
+                                        </thead>
+                                        <tbody class="align-top">
+                                        @foreach($pages as $page)
+                                            <tr class="{{$loop->last ? '' : 'border-b border-solid dark:border-white/40 whitespace-nowrap border-inherit'}}">
+                                                <td class="p-2 align-middle">
+                                                    <p class="mb-0 font-semibold leading-normal text-sm">{{$page['url']}}</p>
+                                                </td>
+
+                                                <td class="p-2 align-middle ">
+                                                    <p class="mb-0 font-semibold leading-normal text-sm">{{$page['pageViews']}}</p>
+                                                </td>
+                                                <td class="p-2 align-middle ">
+                                                    <p class="mb-0 font-semibold leading-normal text-sm">{{substr($page['pageTitle'], strpos($page['pageTitle'], '|') + 2) }}</p>
+                                                </td>
+
+                                                <td class="p-2 align-middle ">
+                                                    <p class="mb-0 font-semibold leading-normal text-sm">
+                                                        {{ round($page['pageViews'] / $totalPages * 100 , 1) }}%
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                        @endforeach
+                                        </tbody>
+                                    </table>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </div>
         </div>
     </div>

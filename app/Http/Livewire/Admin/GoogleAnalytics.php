@@ -25,6 +25,7 @@ class GoogleAnalytics extends Component
     {
 
         $this->visitors = Analytics::fetchTotalVisitorsAndPageViews(Period::months(1));
+
         $this->referrers = Analytics::fetchTopReferrers(Period::months(1));
 
         $this->pages = Analytics::fetchMostVisitedPages(Period::months(1))->sortByDesc('pageViews');
@@ -32,17 +33,19 @@ class GoogleAnalytics extends Component
 
 
         $analyticsData = Analytics::performQuery(
-            Period::days(7),
+            Period::months(2),
             'ga:sessions',
             [
                 'metrics' => 'ga:sessions,ga:newUsers,ga:pageviews,ga:uniquePageviews,ga:visitors',
-                'dimensions' => 'ga:country,ga:referralPath',
+                'dimensions' => 'ga:country',
                 'sort' => '-ga:sessions'
             ]
         );
+        //dd();
 
         $this->totalReferrers = count($analyticsData['rows']);
-        $this->totalVisitors =  $analyticsData['totalsForAllResults']['ga:visitors'];
+
+        $this->totalVisitors =  $this->visitors->sum('visitors');
 
         $this->newVisitors =  $analyticsData['totalsForAllResults']['ga:newUsers'];
         $this->totalCountries = count($analyticsData['rows']);
@@ -57,6 +60,7 @@ class GoogleAnalytics extends Component
 
         $this->totalPageviews = $analyticsData['totalsForAllResults']['ga:pageviews'];
         $this->totalSessions = $analyticsData['totalsForAllResults']['ga:sessions'];
+
         $this->totalPages = $this->pages->sum('pageViews');
 
 
