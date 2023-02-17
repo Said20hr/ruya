@@ -9,9 +9,9 @@ body
 }
 p{
     font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.78;
-    color: #555;
+    color: #464646;
     background-color: #fff;
 }
 .form-control {
@@ -40,11 +40,11 @@ textarea.form-control {
 }
 .btn-primary
 {
-    @apply inline-flex items-center px-4 py-1.5 bg-red-400 border border-transparent rounded-full text-sm text-white uppercase tracking-widest hover:bg-red-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
+    @apply inline-flex items-center px-4 py-1.5 bg-red-400 border border-transparent text-white rounded-full text-sm text-white uppercase hover:bg-red-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
 }
 .btn-primary-outline
 {
-    @apply inline-flex items-center px-4 py-1.5 border-red-400 border bg-white rounded-full text-sm text-red-500 uppercase tracking-widest hover:bg-red-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
+    @apply inline-flex items-center px-4 py-1.5 border-red-400 border bg-white rounded-full text-sm text-red-500 uppercase tracking-widest hover:bg-red-700 hover:text-white active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition;
 }
 iframe
 {

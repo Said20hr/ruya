@@ -42,7 +42,7 @@
          <a href="{{route('visuals')}}" class="navbar-brand">Ruya Studio</a>
      </div>
     <x-public.includes.sidebar/>
-        <main class="container xl:pl-52 xl:mt-2 my-20 pb-20" id="main-collapse">
+        <main class=" xl:pl-56 xl:mt-2 my-20 pb-20" id="main-collapse">
             {{ $slot }}
         </main>
 

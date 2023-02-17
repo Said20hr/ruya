@@ -1,7 +1,7 @@
 <x-guest-layout title="Contact us">
-    <div class="w-full min-h-screen xl:p-8 p-2">
-        <div class="">
-                <h2>{{__('Contact')}}</h2>
+    <div class="w-full min-h-screen xl:px-10 xl:py-4 p-2 container">
+        <div class="w-full">
+            <h2 class="mb-2 text-4xl">{{__('Contact')}}</h2>
                 <p>{{__('Need to get in touch with Ruya Studio?')}} <br>
                     {{__(' We\'re here to help!
                      Whether you have a question, want to request a quote for a project,

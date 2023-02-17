@@ -1,5 +1,5 @@
 <x-guest-layout title="Visuals">
-    <div class="w-full min-h-screen xl:p-8 p-2">
+    <div class="w-full min-h-screen xl:px-10 xl:py-4 p-2 container">
         <div class="grid grid-cols-3">
            @foreach($projects as $project)
                 <div class="relative w-full group transition duration-600 ease-in-out transition-all duration-1000 ease-in-out">

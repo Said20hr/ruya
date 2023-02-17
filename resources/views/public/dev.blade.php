@@ -1,7 +1,7 @@
 <x-guest-layout title="Web Development">
-    <div class="w-full min-h-screen xl:p-8 p-2">
+    <div class="w-full min-h-screen xl:px-10 xl:py-4 p-2 container">
         <div class="w-full">
-            <h2 class="mb-2">
+            <h2 class="mb-2 text-4xl">
             {{__('Web development')}}
             </h2>
             <p>
@@ -21,7 +21,7 @@
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
             @foreach($projects as $project)
                 <div class="w-full mb-2">
-                    <img class="rounded-md shadow-sm mb-4 object-cover w-full 2xl:max-w-[360px] border xl:max-w-[300px] border border-gray-100 xl:h-64" alt="" src="{{asset('storage/'.$project->primary_image)}}">
+                    <img class="rounded-md shadow-sm mb-4 object-cover object-center w-full 2xl:max-w-[360px] border xl:max-w-[300px] border border-gray-100 xl:h-54 hover:scale-105 transition cursor-pointer ease-in-out duration-600" alt="" src="{{asset('storage/'.$project->primary_image)}}">
                     <div class="px-1">
                         <div class="2xl:text-xl text-sm">{{$project->title}}</div>
                         @if($project->excerpt)
