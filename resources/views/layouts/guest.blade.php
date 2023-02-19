@@ -45,7 +45,5 @@
         <main class=" xl:pl-56 xl:mt-2 my-20 pb-20" id="main-collapse">
             {{ $slot }}
         </main>
-
-
 </body>
 </html>

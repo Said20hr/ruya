@@ -10,7 +10,12 @@
             x-show="OpenNavResponsive">
         <div >
             <i class="fa fa-bars border px-1.5 py-1 rounded-sm border-gray-200 cursor-pointer bg-gray-100" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
-            <a href="{{route('visuals')}}" class="navbar-brand">Ruya Studio</a>
+            @if(Route::currentRouteName() == 'visuals')
+                <a href="#" class="navbar-brand">Ruya Studio</a>
+            @else
+                <a href="{{route('visuals')}}" class="navbar-brand">Ruya Studio</a>
+            @endif
+
         </div>
         <nav class="sidebar " >
             <div class="navbar-collapse" id="navbar-collapse">
@@ -84,11 +89,11 @@
                     <p class="2xl:my-4 lg:text-xxs xl:text-sm">{{__('Mastering Motion Design & Software Development. Delivering captivating animations & innovative digital solutions.')}}</p>
                 </div>
                 <ul class="xl:pt-4 pt-8 pl-1">
-                    <li class="mb-1 xl:mb-5"><a href="{{route('visuals')}}" title="Visuals" class="text-base hover:text-black {{ Route::currentRouteName() == 'visuals' ? 'font-bold text-black' : 'text-gray-500' }}"><i class="fa fa-image mr-2"></i> Visuals</a></li>
-                    <li class="mb-1 xl:mb-5"><a href="{{route('motion')}}" title="Motions" class="text-base hover:text-black {{ Route::currentRouteName() == 'motion' ? 'font-bold text-black' : 'text-gray-500' }}"><i class="fa fa-spinner mr-2"></i> Motions</a></li>
-                    <li class="mb-1 xl:mb-5"><a href="{{route('dev')}}" title="Development" class="text-base hover:text-black {{ Route::currentRouteName() == 'dev' ? 'font-bold text-black' : 'text-gray-500' }}"><i class="fa fa-code mr-2"></i> Development</a></li>
-                    <li class="mb-1 xl:mb-5"><a href="#" title="services" class="text-base hover:text-black {{ Route::currentRouteName() == 'services' ? 'font-bold' : '' }}"><i class="fa fa-handshake-o mr-2"></i> Services</a></li>
-                    <li class="mb-1 xl:mb-5"><a href="{{route('contact')}}" title="Contact" class="text-base hover:text-black {{ Route::currentRouteName() == 'contact' ? 'font-bold text-black' : 'text-gray-500' }}" ><i class="fa fa-envelope mr-2"></i> Contact Us</a></li>
+                    <li class="mb-1 xl:mb-4"><a href="{{route('visuals')}}" title="Visuals" class="text-base hover:text-black {{ Route::currentRouteName() == 'visuals' ? 'font-bold text-black' : 'text-gray-500' }}"><i class="fa fa-image mr-2"></i> Visuals</a></li>
+                    <li class="mb-1 xl:mb-4"><a href="{{route('motion')}}" title="Motions" class="text-base hover:text-black {{ Route::currentRouteName() == 'motion' ? 'font-bold text-black' : 'text-gray-500' }}"><i class="fa fa-spinner mr-2"></i> Motions</a></li>
+                    <li class="mb-1 xl:mb-4"><a href="{{route('dev')}}" title="Development" class="text-base hover:text-black {{ Route::currentRouteName() == 'dev' ? 'font-bold text-black' : 'text-gray-500' }}"><i class="fa fa-code mr-2"></i> Development</a></li>
+                    <li class="mb-1 xl:mb-4"><a href="#" title="services" class="text-base hover:text-black {{ Route::currentRouteName() == 'services' ? 'font-bold' : '' }}"><i class="fa fa-handshake-o mr-2"></i> Services</a></li>
+                    <li class="mb-1 xl:mb-4"><a href="{{route('contact')}}" title="Contact" class="text-base hover:text-black {{ Route::currentRouteName() == 'contact' ? 'font-bold text-black' : 'text-gray-500' }}" ><i class="fa fa-envelope mr-2"></i> Contact Us</a></li>
                 </ul>
 
                 <nav class="fixed bottom-2">
