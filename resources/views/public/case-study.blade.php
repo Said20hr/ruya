@@ -4,18 +4,27 @@
             <h2 class="mb-2">{{$project->title}}</h2>
             <p>{{$project->excerpt}}</p>
         </div>
-        <div class="mb-12">
-            <img class="w-1/3 h-1/3 rounded-md shadow object-cover" alt="" src="{{asset('storage/'.$project->primary_image)}}">
-        </div>
+
+        <div class="mx-auto w-4/5">
         @if($project->additional_images)
-        <section class="inline-block py-2 px-4 bg-gray-200 rounded-md h-full w-full">
-            <div class="grid xl:grid-cols-3 grid-cols-1 gap-6 mt-4 !h-full">
-                @foreach( json_decode($project->additional_images,true) as $image)
-                    <img class="rounded-md shadow-sm mb-4 object-cover w-full 2xl:max-w-[360px] border xl:max-w-[300px] border border-gray-100 xl:h-full" alt="{{$image}}" src="{{asset('storage/'.$image)}}">
-                @endforeach
+            <div class="uk-position-relative rounded-xl" uk-slideshow="animation: fade">
+                <ul class="uk-slideshow-items rounded-xl">
+                    @foreach( json_decode($project->additional_images,true) as $image)
+                    <li>
+                        <img src="{{asset('storage/'.$image)}}" class="object-cover rounded-xl" alt="{{$image}}" uk-cover>
+                    </li>
+                    @endforeach
+                </ul>
+                <div class="uk-position-bottom-center uk-position-small">
+                    <ul class="uk-thumbnav">
+                        @foreach( json_decode($project->additional_images,true) as $image)
+                            <li uk-slideshow-item="{{$loop->index}}" class="mb-3"><a href="#"><img src="{{asset('storage/'.$image)}}" width="120" height="80" class="h-16 border-slate-200 border shadow rounded-md" alt="{{$image}}"></a></li>
+                        @endforeach
+                    </ul>
+                </div>
             </div>
-        </section>
         @endif
+        </div>
         <div class="container max-w-7xl">
                 <p class="">
                     {!! $project->description  !!}

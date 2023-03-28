@@ -1,3 +1,4 @@
+@import url('uikit-3.15.22/css/uikit.css');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

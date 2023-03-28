@@ -262,11 +262,30 @@
                                             <td class="p-2 align-middle ">
                                                 <div class="flex items-center px-4 py-1">
                                                     <div class="">
-                                                        @if($country['ga:country'] == "United States")
-                                                            <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="">
-                                                        @else
+                                                        @switch($country['ga:country'])
+                                                            @case('United States')
+                                                                <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/united-states-of-america/flag-square-250.png" alt="USA">
+                                                                @break
+                                                            @case('Saudi Arabia')
+                                                                <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/saudi-arabia/flag-square-250.png" alt="KSA">
+                                                                @break
+                                                            @case('Türkiye')
+                                                                <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/turkey/flag-square-250.png" alt="turkey">
+                                                                @break
+                                                            @case('United Arab Emirates')
+                                                                <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/united-arab-emirates/flag-square-250.png" alt="">
+                                                                @break
+                                                            @case('South Africa')
+                                                                <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/south-africa/flag-square-250.png" alt="">
+                                                                @break
+                                                            @case('United Kingdom')
+                                                                <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-square-250.png" alt="">
+                                                                @break
+                                                            @default
+
+
                                                             <img class="inline-flex items-center object-cover justify-center w-8 h-6 mr-4 text-white transition-all duration-200 text-base ease-soft-in-out rounded-sm" src="https://cdn.countryflags.com/thumbs/{{strtolower($country['ga:country'])}}/flag-square-250.png" alt="">
-                                                        @endif
+                                                        @endswitch
                                                     </div>
                                                     <div class="flex flex-col justify-center">
                                                         <h6 class="my-0 pt-1 leading-normal dark:text-white text-sm">{{$country['ga:country']}}</h6>
