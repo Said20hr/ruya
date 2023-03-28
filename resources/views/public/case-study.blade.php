@@ -5,7 +5,7 @@
             <p>{{$project->excerpt}}</p>
         </div>
 
-        <div class="mx-auto w-4/5">
+        <div class="mx-auto p-6">
         @if($project->additional_images)
             <div class="uk-position-relative rounded-xl" uk-slideshow="animation: fade">
                 <ul class="uk-slideshow-items rounded-xl">
@@ -18,7 +18,7 @@
                 <div class="uk-position-bottom-center uk-position-small">
                     <ul class="uk-thumbnav">
                         @foreach( json_decode($project->additional_images,true) as $image)
-                            <li uk-slideshow-item="{{$loop->index}}" class="mb-3"><a href="#"><img src="{{asset('storage/'.$image)}}" width="120" height="80" class="h-16 border-slate-200 border shadow rounded-md" alt="{{$image}}"></a></li>
+                            <li uk-slideshow-item="{{$loop->index}}" class="mb-3"><a href="#"><img src="{{asset('storage/'.$image)}}" width="120" height="80" class="object-cover h-16 border-slate-200 border shadow rounded-md" alt="{{$image}}"></a></li>
                         @endforeach
                     </ul>
                 </div>
