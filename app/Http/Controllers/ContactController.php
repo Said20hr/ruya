@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\User;
+use App\Notifications\ContactMail;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -41,12 +43,17 @@ class ContactController extends Controller
             'subject' => 'required|string',
             'message' => 'required|string',
         ]);
-        Contact::create([
+       $message =  Contact::create([
             'email' => $request->email,
             'name' =>  $request->name,
             'subject' =>  $request->subject,
             'message' =>  $request->message,
         ]);
+        $users = User::where('role_id',1)->get();
+        foreach ($users as $user)
+        {
+            $user->notify(new ContactMail($message));
+        }
 
         return redirect()->back()->with('success_message', 'We have received your message and will respond to you as soon as possible.');
     }
