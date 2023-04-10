@@ -19,9 +19,11 @@ Route::group(['prefix' => 'admin'], function () {
 Route::get('/',[\App\Http\Controllers\PortfolioController::class,'motion'])->name('motion');
 Route::get('/dev',[\App\Http\Controllers\PortfolioController::class,'dev'])->name('dev');
 Route::get('/visuals',[\App\Http\Controllers\PortfolioController::class,'visuals'])->name('visuals');
+Route::get('/3d-animation',[\App\Http\Controllers\PortfolioController::class,'animation'])->name('animation');
 Route::get('/projects/{slug}',[\App\Http\Controllers\PortfolioController::class,'portfolio'])->name('portfolio');
 Route::get('/contact-us',[\App\Http\Controllers\ContactController::class,'index'])->name('contact');
 Route::post('/contact-us',[\App\Http\Controllers\ContactController::class,'store'])->name('contact.store');
+Route::get('/a',[\App\Http\Controllers\PortfolioController::class,'message']);
 
 
 Route::middleware([

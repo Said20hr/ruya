@@ -1,18 +1,16 @@
 <x-guest-layout title="Motion">
-    <div class="w-full min-h-screen xl:px-10 xl:py-4 p-2 container">
-        <div class="w-full">
-            <h2 class="mb-2 text-4xl">{{__('Motion Graphics')}}</h2>
+    <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 container">
+        <div class="w-full text-center mb-12">
+            <h2 class="mb-8 text-4xl">{{__('Motion Graphics')}}</h2>
             <p class="mb-12">
-                {{__('At Ruya, we pride ourselves on delivering top-notch custom motion graphics services to clients all around the world.
-                      Our team of skilled professionals is dedicated to creating visually stunning and impactful designs that will elevate your brand
-                      and communicate your message effectively.')}}
-                <br>
-                {{__('We would like to share with you some of our latest projects that showcase our expertise and attention to detail.
-                      Take a look and be inspired by the possibilities.')}}
-                <br>
-                {{__(' If you have any questions or would like to discuss a potential project with us,
-                   please don\'t hesitate to reach out. We would be happy to help bring your vision to life. Contact us today!')}}
+                {{__('Ruya provides exceptional custom motion graphics
+services to clients worldwide. Our team of skilled professionals creates visually stunning and impactful
+designs that effectively communicate your brand\'s message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision.
+Let us help bring your brand to the next level. Contact us today!')}}
             </p>
+            <div class="max-w-sm mx-auto flex justify-center my-12">
+                <button class="w-full py-3 px-6 text-white hover:bg-opacity-80 bg-dark rounded-full">{{__('Get quote')}}</button>
+            </div>
         </div>
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
             @foreach($projects as $project)

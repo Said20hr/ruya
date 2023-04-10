@@ -2,6 +2,7 @@
 
 namespace App\Notifications;
 
+use App\Models\Contact;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
@@ -10,16 +11,16 @@ use Illuminate\Notifications\Notification;
 class ContactMail extends Notification
 {
     use Queueable;
-    public $message;
+    public Contact $contact;
 
     /**
      * Create a new notification instance.
      *
      * @return void
      */
-    public function __construct($message)
+    public function __construct(Contact $contact)
     {
-        $this->message = $message;
+        $this->contact = $contact;
     }
 
     /**
@@ -41,11 +42,10 @@ class ContactMail extends Notification
      */
     public function toMail($notifiable)
     {
-        return (new MailMessage)
+        return (new \Illuminate\Notifications\Messages\MailMessage)
             ->subject('New Message')
-            ->greeting('Hello!')
-            ->line('You have a new message.')
-            ->action('View message', url('/admin/contacts/' . $this->message->id));
+            ->greeting('Greeting!')
+            ->view('emails.message', ['contact' => $this->contact]);
     }
 
     /**

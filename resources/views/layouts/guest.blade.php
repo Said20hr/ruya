@@ -38,12 +38,38 @@
 </head>
 <body x-data="{OpenNavResponsive : false}" >
      <div class="xl:hidden fixed p-4 top-0 w-full bg-white z-990" >
-         <i class="fa fa-bars border px-1.5 py-1 rounded-sm border-gray-200 cursor-pointer bg-gray-100" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
-         <a href="{{route('visuals')}}" class="navbar-brand">Ruya Studio</a>
+         <i class="fa fa-bars border text-2xl px-2 rounded-sm border-gray-200 cursor-pointer bg-gray-100" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
+         <a href="{{route('visuals')}}" class="text-2xl ml-3 font-semibold">Ruya Studio</a>
      </div>
     <x-public.includes.sidebar/>
-        <main class=" xl:pl-56 xl:mt-2 my-20 pb-20" id="main-collapse">
+        <main class="px-4 xl:pl-56 xl:mt-2 my-20 pb-20" id="main-collapse">
             {{ $slot }}
         </main>
+     <script>
+         window.addEventListener('DOMContentLoaded', () => {
+             const lazyLoadImages = (element) => {
+                 const images = element.querySelectorAll('[data-src]');
+                 images.forEach(img => {
+                     img.addEventListener('load', () => {
+                         img.removeAttribute('data-src');
+                     });
+                     img.setAttribute('src', img.getAttribute('data-src'));
+                     img.classList.remove('opacity-0');
+                 });
+             }
+
+             const observer = new IntersectionObserver((entries) => {
+                 entries.forEach(entry => {
+                     if (entry.isIntersecting) {
+                         lazyLoadImages(entry.target);
+                         observer.unobserve(entry.target);
+                     }
+                 });
+             });
+
+             const lazyLoad = document.querySelector('[x-data]');
+             observer.observe(lazyLoad);
+         });
+     </script>
 </body>
 </html>
