@@ -332,8 +332,9 @@
                     <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td class="logo" style="text-align: center;">
-                                <h1><a href="https://ruya.studio">
-                                        <img src="https://ruya.studio/assets/icons/Ruya Branding full Logo.png" width="100" height="64" alt="logo">
+                                <h1>
+                                    <a href="https://ruya.studio">
+                                        <img src="https://ruya.studio/assets/icons/Ruya%20Branding%20full%20Logo.png" width="100" height="64" alt="logo">
                                     </a>
                                 </h1>
                             </td>
