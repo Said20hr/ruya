@@ -16,22 +16,21 @@
                 <div class="w-full mb-2 w-fit" x-data="{ lazyLoad: [] }">
                     <img class="rounded-md shadow-sm mb-4 object-cover object-center w-full 2xl:max-w-[360px] border xl:max-w-[300px] border border-gray-100 xl:h-54 hover:scale-105 transition cursor-pointer ease-in-out duration-600" alt="" src="{{asset('storage/'.$project->primary_image)}}">
                     <div class="px-1">
-                        <div class="2xl:text-xl text-sm">{{$project->title}}</div>
+                        <div class="2xl:text-xl text-sm dark:text-white font-semibold text-dark">{{$project->title}}</div>
                         @if($project->excerpt)
-                            <p class="max-w-[400px]">{{$project->excerpt}}</p>
+                            <p class="max-w-[400px] dark:text-gray-300">{{$project->excerpt}}</p>
                         @else
-                            <p>See details...</p>
+                            <p class="dark:text-gray-300">See details...</p>
                         @endif
                         <a href="{{route('portfolio',$project->slug)}}" class="btn-primary" title="">
                             {{__('Case Study')}}
                         </a>
                         @if($project->link)
-                            <a href="{{$project->link}}" class="btn btn-primary-outline mx-4" target="_blank">
+                            <a href="{{$project->link}}" class="btn btn-primary-outline mx-4 dark:border-transparent" target="_blank">
                                 {{__('Link')}}
                             </a>
                         @endif
                     </div>
-
                 </div>
             @endforeach
         </div>

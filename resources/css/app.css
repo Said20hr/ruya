@@ -56,9 +56,9 @@ iframe
     max-height: 100% !important;
     border-radius : 13px
 }
-[x-cloack]
-{
-    display: none ;
+[x-cloak] {
+    display:none;
+    overflow: hidden
 }
 .grid-item .project-description .project-text-holder .project-text-inner {
     display: table-cell;

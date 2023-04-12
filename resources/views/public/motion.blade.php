@@ -8,9 +8,7 @@ services to clients worldwide. Our team of skilled professionals creates visuall
 designs that effectively communicate your brand\'s message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision.
 Let us help bring your brand to the next level. Contact us today!')}}
             </p>
-            <div class="max-w-sm mx-auto flex justify-center my-12">
-                <button class="w-full py-3 px-6 dark:bg-yellow-500 dark:text-dark text-white hover:bg-opacity-80 bg-dark rounded-full">{{__('Get quote')}}</button>
-            </div>
+            @livewire('quotes.motion')
         </div>
         <div class="grid xl:grid-cols-3 gap-8 2xl:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 grid-cols-1">
             @foreach($projects as $project)

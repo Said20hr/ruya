@@ -1,7 +1,8 @@
 @props(['title'])
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
-      x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }"
+      x-cloak
+      x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') !== 'false') }"
       x-init="$watch('darkMode', val => localStorage.setItem('darkMode', val))"
       x-bind:class="{'dark': darkMode === false || (darkMode === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)}">
 <head>
@@ -41,19 +42,19 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body x-data="{OpenNavResponsive : false}" class="dark:bg-gray-900 duration-200 transition-colors" >
-     <div class="xl:hidden fixed p-4 top-0 w-full dark:bg-gray-900 duration-200 transition-colors z-990" >
-         <i class="fa fa-bars border text-2xl px-2 rounded-sm border-gray-200 cursor-pointer dark:bg-gray-900 dark:text-white dark:border-gray-900 bg-gray-100" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
+     <div class="xl:hidden fixed p-4 top-0 w-full dark:bg-gray-900 duration-200 transition-colors z-100" >
+         <i class="fa fa-bars text-2xl cursor-pointer text-dark dark:text-white" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
          <a href="{{route('visuals')}}" class="text-2xl ml-3 font-semibold dark:text-white">Ruya Studio</a>
      </div>
     <x-public.includes.sidebar/>
 
         <main class="px-4 xl:pl-56 pb-20 dark:bg-gray-900 duration-200 transition-colors" id="main-collapse">
-            <header class="fixed top-0 h-16 px-4 border-b border-slate-200 dark:border-slate-800 w-full bg-white dark:bg-gray-900 duration-200 transition-colors">
+            <header class="xl:flex hidden fixed top-0 h-16 px-4 border-b border-slate-200 dark:border-slate-800 w-full bg-white dark:bg-gray-900 duration-200 transition-colors">
                 <div class="py-4 text-black">
                     <div class="relative inline-block w-12 select-none" x-data="{ toggle: darkMode }"
                          @click.prevent="toggle = ! toggle" x-on:click="darkMode =! darkMode">
                         <div :class="{'translate-x-full': toggle}"
-                             class="absolute z-10 border-gray-800 block w-6 h-6 rounded-full bg-white border-4 cursor-pointer transition duration-500 transform"></div>
+                             class="absolute z-10 border-gray-800 block w-6 h-6 px-1 rounded-full bg-white border-4 cursor-pointer transition duration-500 transform"></div>
                         <div class="overflow-hidden bg-gray-800 h-6 w-full rounded-full cursor-pointer flex justify-between items-center p-px p-0.5">
                             <!-- feathericons -->
                             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5  text-yellow-400 fill-current" viewBox="0 0 24 24" >
@@ -77,6 +78,8 @@
         </main>
      <script>
          window.addEventListener('DOMContentLoaded', () => {
+             const darkMode = localStorage.getItem('darkMode') === 'false';
+             document.documentElement.classList.toggle('dark', darkMode);
              const lazyLoadImages = (element) => {
                  const images = element.querySelectorAll('[data-src]');
                  images.forEach(img => {
