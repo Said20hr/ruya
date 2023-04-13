@@ -6,16 +6,16 @@
 
 body
 {
-    font-family: Cabin, Helvetica, Arial, sans-serif !important;
+    font-family: 'Harmattan',Cabin, Helvetica, Arial, sans-serif !important;
 }
 ::selection {
     background-color: rgba(9, 9, 9, 0.93) !important;
     color: white !important;
 }
 p{
-    font-family: Source Sans Pro,Helvetica,Arial,sans-serif;
-    font-size: 16px;
-    line-height: 1.78;
+    font-family: 'Harmattan',Cabin, Helvetica, Arial, sans-serif !important;
+    font-size: 18px;
+    line-height: 1.9;
     color: #464646;
 }
 .form-control {
@@ -34,6 +34,10 @@ p{
 }
 textarea.form-control {
     height: auto;
+}
+h1,h2,h3,h4,h5,h6,a,button,span,div
+{
+    font-family: 'Harmattan',Cabin, Helvetica, Arial, sans-serif !important;
 }
 .fa-icon
 {

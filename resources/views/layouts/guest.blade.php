@@ -24,7 +24,14 @@
     <!-- Fonts -->
     <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:400,700|Source+Sans+Pro:400,700">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Harmattan:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="{{asset('assets/icons/admin.svg')}}" rel="apple-touch-icon">
     <link href="{{asset('assets/icons/fav-1.svg')}}" rel="icon">
     <!-- Scripts -->
@@ -42,9 +49,9 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body {{ config('app.locale') == 'ar' ? " dir=rtl " : '' }} x-data="{OpenNavResponsive : false}" class="dark:bg-gray-900 duration-200 transition-colors" >
-     <div class="xl:hidden fixed p-4 top-0 w-full dark:bg-gray-900 duration-200 transition-colors z-100" >
+     <div class="xl:hidden fixed p-4 top-0 w-full dark:bg-gray-900 bg-white duration-200 transition-colors z-100" >
          <i class="fa fa-bars text-2xl cursor-pointer text-dark dark:text-white" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
-         <a href="{{route('visuals')}}" class="text-2xl ml-3 font-semibold dark:text-white">Ruya Studio</a>
+         <a href="{{route('home')}}" class="text-2xl ml-3 font-semibold dark:text-white">Ruya Studio</a>
      </div>
     <x-public.includes.sidebar/>
 

@@ -1,7 +1,7 @@
 <x-guest-layout title="Motion">
     <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2">
         <div class="w-full text-center mb-12">
-            <h2 class="mb-8 text-4xl dark:text-white duration-200 transition-colors">{{__('Motion Graphics')}}</h2>
+            <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{__('Motion Graphics')}}</h2>
             <p class="mb-12 dark:text-gray-100 duration-200 transition-colors">
                 {{__('Ruya provides exceptional custom motion graphics services
  to clients worldwide. Our team of skilled professionals creates visually stunning and impactful

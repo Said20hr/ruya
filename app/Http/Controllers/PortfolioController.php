@@ -10,7 +10,11 @@ use Illuminate\Http\Request;
 
 class PortfolioController extends Controller
 {
-    //
+
+    public function index()
+    {
+        return view('public.homePage');
+    }
 
     public function visuals()
     {
@@ -54,7 +58,7 @@ class PortfolioController extends Controller
     }
     public function portfolio($slug)
     {
-        $project = Portfolio::where('slug',$slug)->first();
+        $project = Portfolio::where('slug',$slug)->firstOrFail();
         return view('public.case-study',compact('project'));
     }
 

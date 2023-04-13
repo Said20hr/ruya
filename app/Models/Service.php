@@ -8,7 +8,7 @@ use Spatie\Translatable\HasTranslations;
 
 class Service extends Model
 {
-    use HasTranslations;
+
     use HasFactory;
     public $translatable = ['name'];
     protected $fillable = ['name','slug','arabic_name','french_name'];

@@ -1,7 +1,7 @@
 <x-guest-layout title="Motion">
     <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 container">
         <div class="w-full text-center mb-12">
-            <h2 class="mb-8 text-4xl dark:text-white">{{__('3D Product rendering & Animation')}}</h2>
+            <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{__('3D Product rendering & Animation')}}</h2>
             <p class="mb-12 dark:text-gray-200">
                 {{__('At Ruya, we specialize in creating
  exceptional custom 3D animation and product rendering services for clients

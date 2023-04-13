@@ -1,5 +1,5 @@
 <div  x-data="{ modal: false,shown: false }" x-on:close-modal.window="modal = false;shown = true" >
-    <div class="max-w-3xl mx-auto flex justify-center my-12"  x-on:saved.window="savedQuery = true">
+    <div class="max-w-4xl mx-auto flex justify-center my-12"  x-on:saved.window="savedQuery = true">
         <button x-show="!shown"
                 type="button" x-on:click="modal = !modal"
                 class="w-full py-3 max-w-sm px-6 dark:bg-yellow-500 dark:text-dark text-white hover:bg-opacity-80 bg-dark rounded-full">
@@ -59,12 +59,12 @@
                                         <x-jet-input-error for="source"/>
                                     </div>
                                     <div class="2xl:p-3 xl:px-2 2xl:mb-6 xl:2xl:mb-4 mb-2 xl:mb-2 2xl:mb-4 mb-2 xl:mb-2">
-                                        <x-jet-label value="{{__('Type of project')}}" class="text-left mb-3 dark:text-white font-semibold"/>
+                                        <x-jet-label value="{{__('Type of project')}}" class="{{config('app.locale') == 'ar' ?'text-right ':'text-left '}} mb-3 dark:text-white font-semibold"/>
                                         <div class="grid grid-cols-2 gap-4">
                                             @foreach($Projects as $item)
                                             <div class="flex items-center">
                                                 <input id="checkbox-{{$loop->index}}" type="checkbox" wire:model.defer="project" value="{{ $item }}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-{{$loop->index}}" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $item }} </label>
+                                                <label for="checkbox-{{$loop->index}}" class="mx-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $item }} </label>
                                             </div>
                                             @endforeach
 
@@ -72,14 +72,14 @@
                                         <x-jet-input-error for="project"/>
                                     </div>
                                     <div class="2xl:mb-4 mb-2 xl:mb-2 relative" x-data="{currency : 'USD',displayDropdown : false}">
-                                        <input type="number" wire:model.defer="budget" class="form-control" id="subject" placeholder="{{__('Budget')}}">
-                                        <div @click.prevent="displayDropdown  =! displayDropdown " class="top-0 text-center w-24 flex justify-center h-full items-center border border-gray-900 border-l-0 right-0 absolute bg-gray-200 cursor-pointer dark:bg-slate-700 text-gray-800 dark:text-gray-100">
+                                        <input type="number" wire:model.defer="budget" class="form-control " id="subject" placeholder="{{__('Budget')}}">
+                                        <div @click.prevent="displayDropdown  =! displayDropdown " class="top-0 text-center w-24 flex justify-center h-full items-center border border-gray-900 border-l-0 {{config('app.locale') == 'ar' ? 'left-0' :'right-0 '}}  absolute bg-gray-200 cursor-pointer dark:bg-slate-700 text-gray-800 dark:text-gray-100">
                                             <span x-text="currency"></span>
                                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                                         </div>
-                                        <div class="absolute right-0 transition duration-300 ease-in-out" x-show="displayDropdown">
+                                        <div class="absolute {{config('app.locale') == 'ar' ? 'left-0' :'right-0 '}} transition duration-300 ease-in-out" x-show="displayDropdown">
                                             @foreach($currencies as $currency)
-                                                <div type="button" wire:click="SwitchCurrency('{{ $currency }}')"  @click.prevent="currency = '{{$currency}}' ; displayDropdown  =! displayDropdown" class="text-center dark:hover:bg-slate-700 dark:border-gray-900 w-24 pl-4 h-full py-1.5 cursor-pointer hover:bg-slate-100 flex items-center border border-gray-200 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+                                                <div type="button" wire:click="SwitchCurrency('{{ $currency }}')"  @click.prevent="currency = '{{$currency}}' ; displayDropdown  =! displayDropdown" class="text-center dark:hover:bg-slate-700 dark:border-gray-900 w-24 {{config('app.locale') == 'ar' ? 'pr-6' :'pl-4 '}}  h-full py-1.5 cursor-pointer hover:bg-slate-100 flex items-center border border-gray-200 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
                                                     {{ $currency }}
                                                 </div>
                                             @endforeach

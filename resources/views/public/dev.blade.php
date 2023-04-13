@@ -1,7 +1,7 @@
 <x-guest-layout title="Web Development">
     <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 ">
         <div class="w-full text-center mb-12">
-            <h2 class="mb-8 text-4xl dark:text-white">
+            <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">
             {{__('Web development')}}
             </h2>
             <p class="dark:text-gray-200">

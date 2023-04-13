@@ -428,9 +428,9 @@ module.exports = {
             DEFAULT: "1",
         },
         fontFamily: {
-            sans: ["Cabin"],
-            serif: ["Cabin"],
-            body: ["Cabin", "sans-serif"],
+            sans: ["Cabin","Harmattan"],
+            serif: ["Cabin","Harmattan"],
+            body: ["Cabin", "Harmattan"],
             awesome: ["FontAwesome"],
             "awesome-5-free": ["Font Awesome\\ 5 Free"],
         },

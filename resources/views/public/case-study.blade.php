@@ -1,8 +1,8 @@
-<x-guest-layout title="{{$project->title}}">
+<x-guest-layout title="{{$project->name }}">
     <div class="w-full min-h-screen xl:px-10 xl:py-4 p-2 container">
         <div class="mb-10">
-            <h2 class="mb-2">{{$project->title}}</h2>
-            <p>{{$project->excerpt}}</p>
+            <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{$project->name }}</h2>
+            <p>{{$project->excerpto }}</p>
         </div>
 
         <div class="mx-auto p-6">
