@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('quotes', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('category_id');
+            $table->foreignId('service_id');
             $table->string('email');
             $table->string('phone');
             $table->json('project');

@@ -30,24 +30,24 @@
                     </button>
                     <div class="flex items-center text-left">
                         <div class="xl:my-4 my-3 sm:mt-0 sm:ml-4 w-full">
-                            <h3 class="dark:text-white text-center text-xl uppercase leading-6 font-semibold text-sandstone my-4">Get quotation</h3>
+                            <h3 class="dark:text-white text-center text-xl uppercase leading-6 font-semibold 2xl:mb-4 mb-2 xl:mb-2">Get quotation</h3>
                             <form wire:submit.prevent="SaveQuote">
                                 <div class="w-full xl:pt-5 pt-3">
-                                    <div class="mb-4">
+                                    <div class="2xl:mb-4 mb-2 xl:mb-2">
                                         <input type="text" wire:model.defer="name" class="form-control" id="name" placeholder="{{__('Full Name')}}">
                                         <x-jet-input-error for="name"/>
                                     </div>
-                                    <div class="mb-4 grid grid-cols-2 gap-x-4">
+                                    <div class="2xl:mb-4 mb-2 xl:mb-2 grid grid-cols-2 gap-x-4">
                                         <div>
                                             <input type="email" wire:model.defer="email" class="form-control" id="email" placeholder="{{__('Email')}}">
                                             <x-jet-input-error for="email"/>
                                         </div>
                                         <div>
-                                            <input type="text" wire:model.defer="phone" class="form-control" id="email" placeholder="{{__('Phone')}}">
+                                            <input type="text" wire:model.defer="phone" class="form-control" autocomplete="phone" id="phone" placeholder="{{__('Phone')}}">
                                             <x-jet-input-error for="phone"/>
                                         </div>
                                     </div>
-                                    <div class="mb-4 grid grid-cols-2 gap-x-4">
+                                    <div class="2xl:mb-4 mb-2 xl:mb-2 grid grid-cols-2 gap-x-4">
                                         <input type="text" wire:model.defer="company" class="form-control" id="subject" placeholder="{{__('Company')}}">
                                         <select class="form-control" wire:model.defer="source">
                                             <option value="" disabled selected>{{__('How did you hear about us')}}</option>
@@ -58,37 +58,28 @@
                                         </select>
                                         <x-jet-input-error for="source"/>
                                     </div>
-                                    <div class="p-3 mb-6">
+                                    <div class="2xl:p-3 xl:px-2 2xl:mb-6 xl:2xl:mb-4 mb-2 xl:mb-2 2xl:mb-4 mb-2 xl:mb-2">
                                         <x-jet-label value="{{__('Type of project')}}" class="text-left mb-3 dark:text-white font-semibold"/>
                                         <div class="grid grid-cols-2 gap-4">
+                                            @foreach($Projects as $item)
                                             <div class="flex items-center">
-                                                <input id="checkbox-1" type="checkbox" wire:model.defer="project" value="{{__('Website')}}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-1" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Website')}} </label>
+                                                <input id="checkbox-{{$loop->index}}" type="checkbox" wire:model.defer="project" value="{{ $item }}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
+                                                <label for="checkbox-{{$loop->index}}" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{ $item }} </label>
                                             </div>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-2" type="checkbox" wire:model.defer="project" value="{{__('Web Application')}}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-2" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Web Application')}}</label>
-                                            </div>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-3" type="checkbox" wire:model.defer="project" value="{{__('Saas Project')}}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-3" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Saas Project')}}</label>
-                                            </div>
-                                            <div class="flex items-center">
-                                                <input id="checkbox-4" type="checkbox" wire:model.defer="project" value="{{__('Mobile Application')}}" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600">
-                                                <label for="checkbox-4" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">{{__('Mobile Application')}}</label>
-                                            </div>
+                                            @endforeach
+
                                         </div>
                                         <x-jet-input-error for="project"/>
                                     </div>
-                                    <div class="mb-4 relative" x-data="{currency : 'USD',displayDropdown : false}">
+                                    <div class="2xl:mb-4 mb-2 xl:mb-2 relative" x-data="{currency : 'USD',displayDropdown : false}">
                                         <input type="number" wire:model.defer="budget" class="form-control" id="subject" placeholder="{{__('Budget')}}">
-                                        <div @click.prevent="displayDropdown  =! displayDropdown " class="top-0 text-center w-24 flex justify-center h-full items-center border border-gray-900 border-l-0 right-0 absolute bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+                                        <div @click.prevent="displayDropdown  =! displayDropdown " class="top-0 text-center w-24 flex justify-center h-full items-center border border-gray-900 border-l-0 right-0 absolute bg-gray-200 cursor-pointer dark:bg-slate-700 text-gray-800 dark:text-gray-100">
                                             <span x-text="currency"></span>
                                             <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
                                         </div>
                                         <div class="absolute right-0 transition duration-300 ease-in-out" x-show="displayDropdown">
                                             @foreach($currencies as $currency)
-                                                <div type="button" wire:click="SwitchCurrency('{{ $currency }}')"  @click.prevent="currency = '{{$currency}}' ; displayDropdown  =! displayDropdown" class="text-center w-24 pl-4 h-full py-1.5 cursor-pointer hover:bg-slate-100 flex items-center border border-gray-200 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
+                                                <div type="button" wire:click="SwitchCurrency('{{ $currency }}')"  @click.prevent="currency = '{{$currency}}' ; displayDropdown  =! displayDropdown" class="text-center dark:hover:bg-slate-700 dark:border-gray-900 w-24 pl-4 h-full py-1.5 cursor-pointer hover:bg-slate-100 flex items-center border border-gray-200 bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-100">
                                                     {{ $currency }}
                                                 </div>
                                             @endforeach
@@ -96,7 +87,7 @@
                                         </div>
                                         <x-jet-input-error for="budget"/>
                                     </div>
-                                    <div class="mb-4">
+                                    <div class="2xl:mb-4 mb-2 xl:mb-2">
                                         <textarea class="form-control"  wire:model.defer="additional" rows="3" placeholder="{{__('Additional information')}}"></textarea>
                                         <x-jet-input-error for="additional"/>
                                     </div>
@@ -112,3 +103,4 @@
         </div>
     </div>
 </div>
+

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Livewire\Quotes;
+namespace App\Http\Livewire;
 
-use App\Models\Quote;
 use App\Models\Service;
+use App\Models\User;
+use App\Notifications\quoteNotification;
 use Livewire\Component;
-use TCG\Voyager\Models\Category;
 
-class Dev extends Component
+class Quote extends Component
 {
     public $name;
     public $email;
@@ -17,8 +17,22 @@ class Dev extends Component
     public $source;
     public $budget;
     public $additional;
+    public $type;
     public $currencies = ['USD','EUR','DZD'];
+    public $Projects = [];
     public $selectedCurrency = 'USD';
+
+    public function mount($type)
+    {
+        $this->type = $type;
+        switch ($type)
+        {
+            case 'dev': $this->Projects = ['Website','Web Application','Saas Project','Mobile Application']; break;
+            case 'motion': $this->Projects = ['2d motion','motion explainer','Video editing']; break;
+            case 'animation': $this->Projects = ['3d product','3d rendering']; break;
+        }
+
+    }
 
     public function SwitchCurrency($currency)
     {
@@ -40,10 +54,10 @@ class Dev extends Component
     public function SaveQuote()
     {
         $this->validate();
-        $service = Service::where('slug','dev')->firstOrFail();
-        Quote::create([
+        $service = Service::where('slug',$this->type)->firstOrFail();
+        $quote =  \App\Models\Quote::create([
             'name' => $this->name,
-            'category_id' => $service->id,
+            'service_id' => $service->id,
             'email' => $this->email,
             'phone' => $this->phone,
             'project' => json_encode($this->project,true),
@@ -54,6 +68,11 @@ class Dev extends Component
             'currency' => $this->selectedCurrency,
         ]);
         $this->resetProperties();
+        $users = User::where('role_id',1)->get();
+        foreach ($users as $user)
+        {
+            $user->notify(new quoteNotification($quote));
+        }
         $this->dispatchBrowserEvent('close-modal');
         $this->emit('saved');
     }
@@ -70,6 +89,6 @@ class Dev extends Component
     }
     public function render()
     {
-        return view('livewire.quotes.dev');
+        return view('livewire.quote');
     }
 }

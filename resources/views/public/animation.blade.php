@@ -1,17 +1,15 @@
 <x-guest-layout title="Motion">
     <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 container">
         <div class="w-full text-center mb-12">
-            <h2 class="mb-8 text-4xl">{{__('3D Product rendering & Animation')}}</h2>
-            <p class="mb-12">
+            <h2 class="mb-8 text-4xl dark:text-white">{{__('3D Product rendering & Animation')}}</h2>
+            <p class="mb-12 dark:text-gray-200">
                 {{__('At Ruya, we specialize in creating
  exceptional custom 3D animation and product rendering services for clients
   around the world. Our team of skilled professionals is dedicated to crafting visually stunning and
   impactful designs that effectively communicate your brand\'s message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects in 3D animation and product rendering. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision. Let us help bring your brand to the next level with our innovative
  3D animation and product rendering services. Contact us today!')}}
             </p>
-            <div class="max-w-sm mx-auto flex justify-center my-12">
-                <button class="w-full py-3 px-6 text-white hover:bg-opacity-80 bg-dark rounded-full">{{__('Get quote')}}</button>
-            </div>
+            @livewire('quote',['type' => 'animation'])
         </div>
         <div class="grid grid-cols-1 xl:grid-cols-3 gap-8">
             @foreach($projects as $project)

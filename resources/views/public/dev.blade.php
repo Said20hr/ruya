@@ -9,16 +9,18 @@
              applications tailored to each client\'s unique needs and requirements, using the latest technologies to ensure robust, scalable, and user-friendly applications. Our goal is to help businesses enhance their online presence and achieve their objectives through innovative web solutions.
              Check out our portfolio to see the diverse industries and clients we have worked with. Contact us today to discuss your web development vision..')}}
             </p>
-            @livewire('quotes.dev')
+            @livewire('quote',['type' => 'dev'])
     </div>
         <div class="grid xl:grid-cols-3 gap-8 2xl:grid-cols-3 md:grid-cols-1 sm:grid-cols-1 grid-cols-1">
             @foreach($projects as $project)
-                <div class="w-full mb-2 w-fit" x-data="{ lazyLoad: [] }">
-                    <img class="rounded-md shadow-sm mb-4 object-cover object-center w-full 2xl:max-w-[360px] border xl:max-w-[300px] border border-gray-100 xl:h-54 hover:scale-105 transition cursor-pointer ease-in-out duration-600" alt="" src="{{asset('storage/'.$project->primary_image)}}">
+                <div class="w-full mb-2 w-fit uk-inline-clip uk-transition-toggle rounded-md h-full" x-data="{ lazyLoad: [] }">
+                    <img class="uk-transition-scale-up uk-transition-opaque rounded-md shadow-sm mb-4 object-cover object-center w-full 2xl:max-w-[360px] border xl:max-w-[300px] border dark:border-gray-800 border-gray-100 xl:h-54" alt="" src="{{asset('storage/'.$project->primary_image)}}">
                     <div class="px-1">
-                        <div class="2xl:text-xl text-sm dark:text-white font-semibold text-dark">{{$project->title}}</div>
-                        @if($project->excerpt)
-                            <p class="max-w-[400px] dark:text-gray-300">{{$project->excerpt}}</p>
+                        <div class="2xl:text-xl text-sm dark:text-white font-semibold text-dark">
+                            {{ $project->name }}
+                        </div>
+                        @if($project->excerpto)
+                            <p class="max-w-[400px] dark:text-gray-300">{{$project->excerpto}}</p>
                         @else
                             <p class="dark:text-gray-300">See details...</p>
                         @endif

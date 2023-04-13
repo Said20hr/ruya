@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 
 class Portfolio extends Model
 {
@@ -14,6 +15,26 @@ class Portfolio extends Model
         'description','arabic_description','french_description',
         'excerpt','arabic_excerpt','french_excerpt'
     ];
+
+    public function getNameAttribute()
+    {
+        $locale = config('app.locale');
+        return match ($locale) {
+            'ar' => $this->arabic_title ?? $this->title,
+            'fr' => $this->french_title ?? $this->title,
+            default => $this->title,
+        };
+    }
+    public function getExcerptoAttribute()
+    {
+        $locale = config('app.locale');
+        return match ($locale) {
+            'ar' => $this->arabic_excerpt ?? $this->excerpt,
+            'fr' => $this->french_excerpt ?? $this->excerpt,
+            default => $this->excerpt,
+        };
+    }
+
 
 
 }
