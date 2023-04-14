@@ -23,8 +23,8 @@
                         </svg>
                         <h4 class="2xl:text-2xl text-xl font-bold dark:text-slate-900 text-white">{{__('Software development')}}</h4>
                         <p class="text-md font-light mt-2 dark:text-slate-700 text-white">
-                            Putting together a page has never been easier than matching together pre-made
-                            cFrom landing pages presentation to login areas, you can easily customise and built your pages.</p>
+                        {{__('From web and mobile app development to bespoke software solutions, we bring your ideas to life with cutting-edge technology.')}}
+                        </p>
                     </blockquote>
                 </div>
                 <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white">
@@ -36,8 +36,7 @@
                         </svg>
                         <h4 class="2xl:text-2xl text-xl font-bold dark:text-slate-900 text-white">{{__('Visuals & photography')}}</h4>
                         <p class="text-md font-light mt-2 dark:text-slate-700 text-white">
-                            Putting together a page has never been easier than matching together pre-made
-                            cFrom landing pages presentation to login areas, you can easily customise and built your pages.</p>
+                           {{__('Capture the essence of your brand with our expert visual and photographic services. From design to final product, we bring your vision to life.')}}</p>
                     </blockquote>
                 </div>
             </div>

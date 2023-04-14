@@ -1,5 +1,5 @@
 @props(['title'])
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
       x-cloak
       x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' || (window.matchMedia('(prefers-color-scheme: dark)').matches && localStorage.getItem('darkMode') !== 'false') }"
@@ -49,47 +49,39 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body {{ config('app.locale') == 'ar' ? " dir=rtl " : '' }} x-data="{OpenNavResponsive : false}" class="dark:bg-gray-900 duration-200 transition-colors" >
-     <div class="xl:hidden fixed p-4 top-0 w-full dark:bg-gray-900 bg-white duration-200 transition-colors z-100" >
-         <i class="fa fa-bars text-2xl cursor-pointer text-dark dark:text-white" x-on:click="OpenNavResponsive = !OpenNavResponsive"></i>
-         <a href="{{route('home')}}" class="text-2xl mx-3 font-semibold dark:text-white">{{__('Ruya Studio')}}</a>
-     </div>
-    <x-public.includes.sidebar/>
+<main class="px-4" id="main-collapse">
+    <div class="pt-20">
+        {{ $slot }}
+    </div>
+</main>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const darkMode = localStorage.getItem('darkMode') === 'false';
+        document.documentElement.classList.toggle('dark', darkMode);
+        const lazyLoadImages = (element) => {
+            const images = element.querySelectorAll('[data-src]');
+            images.forEach(img => {
+                img.addEventListener('load', () => {
+                    img.removeAttribute('data-src');
+                });
+                img.setAttribute('src', img.getAttribute('data-src'));
+                img.classList.remove('opacity-0');
+            });
+        }
 
-        <main class="px-4 {{ config('app.locale') == 'ar' ? " xl:pr-56 " : 'xl:pl-56' }}  pb-20 dark:bg-gray-900 duration-200 transition-colors" id="main-collapse">
-            <x-public.includes.header/>
-            <div class="pt-20">
-                {{ $slot }}
-            </div>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    lazyLoadImages(entry.target);
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
 
-        </main>
-     <script>
-         window.addEventListener('DOMContentLoaded', () => {
-             const darkMode = localStorage.getItem('darkMode') === 'false';
-             document.documentElement.classList.toggle('dark', darkMode);
-             const lazyLoadImages = (element) => {
-                 const images = element.querySelectorAll('[data-src]');
-                 images.forEach(img => {
-                     img.addEventListener('load', () => {
-                         img.removeAttribute('data-src');
-                     });
-                     img.setAttribute('src', img.getAttribute('data-src'));
-                     img.classList.remove('opacity-0');
-                 });
-             }
-
-             const observer = new IntersectionObserver((entries) => {
-                 entries.forEach(entry => {
-                     if (entry.isIntersecting) {
-                         lazyLoadImages(entry.target);
-                         observer.unobserve(entry.target);
-                     }
-                 });
-             });
-
-             const lazyLoad = document.querySelector('[x-data]');
-             observer.observe(lazyLoad);
-         });
-     </script>
+        const lazyLoad = document.querySelector('[x-data]');
+        observer.observe(lazyLoad);
+    });
+</script>
 @livewireScripts
 </body>
 </html>

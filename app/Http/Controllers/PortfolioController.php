@@ -56,9 +56,9 @@ class PortfolioController extends Controller
         }
         return view('public.motion',compact('projects'));
     }
-    public function portfolio($slug)
+    public function portfolio($locale, $slug)
     {
-        $project = Portfolio::where('slug',$slug)->firstOrFail();
+        $project = Portfolio::where('slug', $slug)->firstOrFail();
         return view('public.case-study',compact('project'));
     }
 

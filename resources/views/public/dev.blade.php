@@ -5,9 +5,7 @@
             {{__('Web development')}}
             </h2>
             <p class="dark:text-gray-200">
-            {{__(' Ruya specializes in providing high-quality web development services to clients worldwide. Our expert team creates custom web
-             applications tailored to each client\'s unique needs and requirements, using the latest technologies to ensure robust, scalable, and user-friendly applications. Our goal is to help businesses enhance their online presence and achieve their objectives through innovative web solutions.
-             Check out our portfolio to see the diverse industries and clients we have worked with. Contact us today to discuss your web development vision..')}}
+            {{__("Ruya specializes in providing high-quality web development services to clients worldwide. Our expert team creates custom web applications tailored to each client's unique needs and requirements, using the latest technologies to ensure robust, scalable, and user-friendly applications. Our goal is to help businesses enhance their online presence and achieve their objectives through innovative web solutions. Check out our portfolio to see the diverse industries and clients we have worked with. Contact us today to discuss your web development vision.")}}
             </p>
             @livewire('quote',['type' => 'dev'])
     </div>
@@ -24,8 +22,8 @@
                         @else
                             <p class="dark:text-gray-300">See details...</p>
                         @endif
-                        <a href="{{route('portfolio',$project->slug)}}" class="btn-primary" title="">
-                            {{__('Case Study')}}
+                        <a href="{{ route('portfolio', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}" class="btn-primary" title="">
+                            {{ __('Case Study') }}
                         </a>
                         @if($project->link)
                             <a href="{{$project->link}}" class="btn btn-primary-outline mx-4 dark:border-transparent" target="_blank">

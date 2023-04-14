@@ -1,4 +1,4 @@
-<x-guest-layout title="{{$project->name }}">
+<x-layout.errors title="{{$project->name }}">
     <div class="w-full min-h-screen xl:px-10 xl:py-4 p-2 container">
         <div class="mb-10">
             <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{$project->name }}</h2>
@@ -31,4 +31,9 @@
                 </p>
             </div>
     </div>
-</x-guest-layout>
+    <div class="flex w-fit justify-center my-12">
+        <a href="{{ route('home',config('app.locale') ) }}" class="btn btn-primary z-50 relative">
+            {{__('Return to homepage')}}
+        </a>
+    </div>
+</x-layout.errors>

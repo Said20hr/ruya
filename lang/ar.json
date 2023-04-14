@@ -399,6 +399,7 @@
     "Name": "الاسم",
     "Namibia": "ناميبيا",
     "Nauru": "ناورو",
+    "Ruya Studio": "رؤيا ستوديو ",
     "Nepal": "نيبال",
     "Netherlands": "هولندا",
     "Netherlands Antilles": "جزر الأنتيل الهولندية",
@@ -811,5 +812,18 @@
     "Website": "الموقع",
     "Additional information": "معلومات إضافية",
     "How did you hear about us": "كيف سمعت عنا",
-    "Thank you for submitting your quote request. We will be in touch with you shortly.": "شكرًا لتقديم طلبك للحصول على عرض أسعار. سنتواصل معك قريبًا"
+    "Thank you for submitting your quote request. We will be in touch with you shortly.": "شكرًا لتقديم طلبك للحصول على عرض أسعار. سنتواصل معك قريبًا",
+    "Page not found": "الصفحة غير موجودة",
+    "Error 404": "خطأ 404",
+    "Capture the essence of your brand with our expert visual and photographic services. From design to final product, we bring your vision to life.": "احتفظ بجوهر علامتك التجارية مع خدماتنا المتخصصة في التصوير والصور. من التصميم إلى المنتج النهائي، نحقق رؤيتك.",
+    "Return to homepage": "العودة إلى الصفحة الرئيسية",
+    "Ruya specializes in providing high-quality web development services to clients worldwide. Our expert team creates custom web applications tailored to each client's unique needs and requirements, using the latest technologies to ensure robust, scalable, and user-friendly applications. Our goal is to help businesses enhance their online presence and achieve their objectives through innovative web solutions. Check out our portfolio to see the diverse industries and clients we have worked with. Contact us today to discuss your web development vision."
+    : "تتخصص رؤيا في توفير خدمات تطوير الويب عالية الجودة للعملاء في جميع أنحاء العالم. يقوم فريقنا المتخصص بإنشاء تطبيقات ويب مخصصة تتناسب مع احتياجات ومتطلبات كل عميل بشكل فريد، باستخدام أحدث التقنيات لضمان تطبيقات قوية وموسعة وسهلة الاستخدام. هدفنا هو مساعدة الشركات على تعزيز وجودها على الإنترنت وتحقيق أهدافها من خلال حلول ويب مبتكرة. تحقق من محفظتنا لرؤية الصناعات المتنوعة والعملاء الذين عملنا معهم. اتصل بنا اليوم لمناقشة رؤيتك لتطوير الويب.",
+    "The page you are trying to view does not exist or another error has occurred. You can return to the homepage if you wish." :
+    "الصفحة التي تحاول عرضها غير موجودة أو حدث خطأ آخر. يمكنك العودة إلى الصفحة الرئيسية إذا كنت ترغب في ذلك.",
+    "Ruya specializes in creating exceptional custom 3D animation and product rendering services for clients around the world. Our team of skilled professionals crafts visually stunning and impactful designs that effectively communicate your brand's message. Let us help bring your brand to the next level with our innovative services. Contact us today!" :
+    "في رويا، نتخصص في تقديم خدمات تصميم الرسوم المتحركة ثلاثية الأبعاد وتقديم المنتجات المخصصة للعملاء في جميع أنحاء العالم. يقوم فريقنا من المحترفين المهرة بتصميم تصاميم بصرية مذهلة وفعالة لنقل رسالة علامتك التجارية. دعنا نساعدك على إعطاء علامتك التجارية مكانة متقدمة مع خدماتنا المبتكرة. تواصل معنا اليوم!",
+    "Ruya provides exceptional custom motion graphics services to clients worldwide. Our team of skilled professionals creates visually stunning and impactful designs that effectively communicate your brand's message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision. Let us help bring your brand to the next level.":"توفر رؤيا خدمات استثنائية للرسوم المتحركة المخصصة للعملاء في جميع أنحاء العالم. يقوم فريقنا المتميز من المحترفين بإنشاء تصميمات مذهلة بصريا وتأثيرية تعبر بفعالية عن رسالة علامتك التجارية. نحن فخورون بانتباهنا للتفاصيل وخبرتنا، كما يتضح من مشاريعنا الأخيرة. اتركوا أنفسكم يلهمكم الإمكانيات وتواصلوا معنا بأي أسئلة أو لمناقشة رؤيتكم. دعونا نساعدكم في إطلاق علامتكم التجارية للمستوى التالي.",
+    "From web and mobile app development to bespoke software solutions, we bring your ideas to life with cutting-edge technology.": "من تطوير تطبيقات الويب والجوال إلى حلول البرمجيات الخاصة، نحقق أفكارك باستخدام أحدث التقنيات."
+
 }

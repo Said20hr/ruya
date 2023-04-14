@@ -3,10 +3,7 @@
         <div class="w-full text-center mb-12">
             <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{__('Motion Graphics')}}</h2>
             <p class="mb-12 dark:text-gray-100 duration-200 transition-colors">
-                {{__('Ruya provides exceptional custom motion graphics services
- to clients worldwide. Our team of skilled professionals creates visually stunning and impactful
-designs that effectively communicate your brand\'s message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision.
-Let us help bring your brand to the next level. Contact us today!')}}
+                {{__("Ruya provides exceptional custom motion graphics services to clients worldwide. Our team of skilled professionals creates visually stunning and impactful designs that effectively communicate your brand's message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision. Let us help bring your brand to the next level.",)}}
             </p>
             @livewire('quote',['type' => 'motion'])
         </div>
@@ -21,8 +18,8 @@ Let us help bring your brand to the next level. Contact us today!')}}
                         @else
                             <p class="dark:text-gray-300">See details...</p>
                         @endif
-                        <a href="{{route('portfolio',$project->slug)}}" class="btn-primary" title="">
-                            {{__('Case Study')}}
+                        <a href="{{ route('portfolio', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}" class="btn-primary" title="">
+                            {{ __('Case Study') }}
                         </a>
                         @if($project->link)
                             <a href="{{$project->link}}" class="btn btn-primary-outline mx-4 dark:border-transparent" target="_blank">

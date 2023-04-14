@@ -3,11 +3,7 @@
         <div class="w-full text-center mb-12">
             <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{__('3D Product rendering & Animation')}}</h2>
             <p class="mb-12 dark:text-gray-200">
-                {{__('At Ruya, we specialize in creating
- exceptional custom 3D animation and product rendering services for clients
-  around the world. Our team of skilled professionals is dedicated to crafting visually stunning and
-  impactful designs that effectively communicate your brand\'s message. We take pride in our attention to detail and expertise, as demonstrated by our latest projects in 3D animation and product rendering. Be inspired by the possibilities and reach out to us with any questions or to discuss your vision. Let us help bring your brand to the next level with our innovative
- 3D animation and product rendering services. Contact us today!')}}
+                {{__(    "Ruya specializes in creating exceptional custom 3D animation and product rendering services for clients around the world. Our team of skilled professionals crafts visually stunning and impactful designs that effectively communicate your brand's message. Let us help bring your brand to the next level with our innovative services. Contact us today!")}}
             </p>
             @livewire('quote',['type' => 'animation'])
         </div>
@@ -22,8 +18,8 @@
                         @else
                             <p>See details...</p>
                         @endif
-                        <a href="{{route('portfolio',$project->slug)}}" class="btn-primary" title="">
-                            {{__('Case Study')}}
+                        <a href="{{ route('portfolio', ['locale' => app()->getLocale(), 'slug' => $project->slug]) }}" class="btn-primary" title="">
+                            {{ __('Case Study') }}
                         </a>
                         @if($project->link)
                             <a href="{{$project->link}}" class="btn btn-primary-outline mx-4" target="_blank">
