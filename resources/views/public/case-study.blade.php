@@ -29,7 +29,7 @@
                 {!! $project->description  !!}
             </p>
             <div class="flex justify-center py-12">
-                <a href="{{ URL::previous() }}}" class="btn btn-primary z-50 relative">
+                <a href="{{ URL::previous() }}" class="btn btn-primary z-50 relative">
                     {{__('Return back')}}
                 </a>
             </div>
