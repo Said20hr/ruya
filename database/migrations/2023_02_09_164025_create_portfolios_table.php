@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('portfolios', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id');
+            $table->foreignId('service_id');
             $table->string('title');
             $table->string('slug')->unique();
             $table->string('arabic_title')->nullable();

@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Models\Category;
 
 
 class Portfolio extends Model
@@ -33,6 +34,10 @@ class Portfolio extends Model
             'fr' => $this->french_excerpt ?? $this->excerpt,
             default => $this->excerpt,
         };
+    }
+    public function category()
+    {
+        return $this->belongsTo(Service::class);
     }
 
 
