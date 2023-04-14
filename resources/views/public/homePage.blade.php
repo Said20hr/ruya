@@ -2,8 +2,8 @@
     <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 container">
         <div class="w-full text-center mb-12">
             <div class="grid xl:grid-cols-3 gap-12">
-                <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white">
-                    <img alt="..." src="{{asset('assets/images/sensei.gif')}}" class="w-full align-middle border rounded-t-lg">
+                <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white border-gray-700">
+                    <img alt="..." src="{{asset('assets/images/sensei.gif')}}" class="w-full align-middle border dark:border-gray-700 rounded-t-lg">
                     <blockquote class="relative p-6 mb-4">
                         <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height:95px;top:-94px">
                             <polygon points="-30,95 583,95 583,65" class="dark:text-white text-black fill-current "></polygon>
@@ -14,9 +14,9 @@
                         </p>
                     </blockquote>
                 </div>
-                <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white">
+                <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white border-gray-700">
                     <img alt="..."
-                         src="{{asset('assets/images/dev.webp')}}" class="w-full align-middle border rounded-t-lg">
+                         src="{{asset('assets/images/dev.webp')}}" class="w-full align-middle border dark:border-gray-700 rounded-t-lg">
                     <blockquote class="relative p-6 mb-4">
                         <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height:95px;top:-94px">
                             <polygon points="-30,95 583,95 583,65" class="dark:text-white text-dark fill-current "></polygon>
@@ -27,9 +27,9 @@
                         </p>
                     </blockquote>
                 </div>
-                <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white">
+                <div class="relative flex flex-col min-w-0 break-words w-full shadow-lg rounded-lg bg-black dark:bg-white border border-gray-700">
                     <img alt="..."
-                         src="{{asset('assets/images/photography.gif')}}" class="w-full align-middle border rounded-t-lg">
+                         src="{{asset('assets/images/photography.gif')}}" class="w-full align-middle border dark:border-gray-700 rounded-t-lg">
                     <blockquote class="relative p-6 mb-4">
                         <svg preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 583 95" class="absolute left-0 w-full block" style="height:95px;top:-94px">
                             <polygon points="-30,95 583,95 583,65" class="dark:text-white text-dark  fill-current "></polygon>

@@ -1,8 +1,8 @@
 <div  x-data="{ modal: false,shown: false }" x-on:close-modal.window="modal = false;shown = true" >
-    <div class="max-w-4xl mx-auto flex justify-center my-12"  x-on:saved.window="savedQuery = true">
+    <div class="w-fit xl:max-w-4xl mx-auto flex justify-center my-6 xl:my-12"  x-on:saved.window="savedQuery = true">
         <button x-show="!shown"
                 type="button" x-on:click="modal = !modal"
-                class="w-full py-3 max-w-sm px-6 dark:bg-yellow-500 dark:text-dark text-white hover:bg-opacity-80 bg-dark rounded-full">
+                class="w-full xl:py-3 py-2 max-w-sm px-6 dark:bg-yellow-500 dark:text-dark text-white hover:bg-opacity-80 bg-dark rounded-full">
             {{__('Get quote')}}
         </button>
         <p x-show="shown" class="duration-300 delay-1s transition-opacity xl:text-xl text-sm x-full bg-emerald-500 rounded-full text-white py-2 px-6">

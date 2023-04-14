@@ -1,8 +1,8 @@
 <x-guest-layout title="Motion">
-    <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 container">
-        <div class="w-full text-center mb-12">
-            <h2 class="mb-8 2xl:text-4xl xl:text-2xl text-xl dark:text-white">{{__('Crafting Digital Experiences that Inspire')}}</h2>
-            <div class="container mt-20 grid 2xl:grid-cols-3 xl:grid-cols-2 gap-8">
+    <div class="w-full min-h-screen xl:px-10 xl:py-12 p-2 xl:container">
+        <div class="w-full text-center mt-12">
+            <h2 class="xl:mb-8 2xl:text-4xl text-3xl dark:text-white">{{__('Crafting Digital Experiences that Inspire')}}</h2>
+            <div class="xl:container mt-12 xl:mt-20 grid 2xl:grid-cols-3 xl:grid-cols-2 gap-4 xl:gap-8">
                 <div class="p-4 rounded-md border-2 dark:border-gray-600 border-yellow-500 dark:hover:bg-slate-700 hover:bg-gray-100 transition-colors duration-700 cursor-pointer">
                         <div class="flex mb-4 justify-center flex-col items-center">
                             <div class="w-16 h-16 rounded-full dark:bg-gray-200 bg-red-500"></div>

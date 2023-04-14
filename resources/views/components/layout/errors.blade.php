@@ -49,8 +49,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body {{ config('app.locale') == 'ar' ? " dir=rtl " : '' }} x-data="{OpenNavResponsive : false}" class="dark:bg-gray-900 duration-200 transition-colors" >
-<main class="px-4" id="main-collapse">
-    <div class="pt-20">
+<main id="main-collapse">
+    <div class="pt-24">
         {{ $slot }}
     </div>
 </main>
