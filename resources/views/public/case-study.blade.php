@@ -16,7 +16,7 @@
             @endif
 
             <div class="xl:flex items-center gap-x-2 hidden">
-                
+
                 @guest
                     <a href="{{route('voyager.login')}}" class="btn btn-primary">{{__('Login')}}</a>
                 @endguest
