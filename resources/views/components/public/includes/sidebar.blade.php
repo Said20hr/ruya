@@ -15,7 +15,7 @@
                 <div class="xl:block hidden">
                     <a class="site-brand" href="{{route('home')}}" title="home">
                         <img class="object-fit mb-4 2xl:w-24 xl:w-20 w-16" alt="" src="{{asset('assets/icons/Ruya Branding full Logo.png')}}">
-                        <h6 class="text-black font-semibold">Ruya Studio</h6>
+                        <h6 class="text-black font-semibold">{{__('Ruya Studio')}}</h6>
                     </a>
                     <p class="2xl:my-4 lg:text-xxs xl:text-sm">{{__('Mastering Motion Design & Software Development. Delivering captivating animations & innovative digital solutions.')}}</p>
                 </div>
@@ -145,7 +145,7 @@
                     <a class="site-brand relative" href="{{route('home')}}" title="home">
                         <img class="object-fit mb-4 2xl:w-24 xl:w-20 w-16 flex dark:hidden absolute" src="{{asset('assets/icons/Ruya Branding full Logo.png')}}" alt="Logo">
                         <img class="object-fit mb-4 2xl:w-24 xl:w-20 w-16 dark:flex hidden absolute" src="{{asset('assets/icons/Logo-white.png')}}" alt="logo" >
-                        <h6 class="text-black font-semibold pt-20 dark:text-white">{{__('Ruya Studio'}}</h6>
+                        <h6 class="text-black font-semibold pt-20 dark:text-white">{{__('Ruya Studio')}}</h6>
                     </a>
                     <p class="2xl:my-4 text-base 2xl:text-base xl:text-sm dark:text-gray-100">{{__('Mastering Motion Design & Software Development. Delivering captivating animations & innovative digital solutions.')}}</p>
                 </div>
