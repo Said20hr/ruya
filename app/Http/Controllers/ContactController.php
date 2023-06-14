@@ -42,8 +42,12 @@ class ContactController extends Controller
             'name' => 'required|string',
             'subject' => 'required|string',
             'message' => 'required|string',
+            'g-recaptcha-response' => 'required|recaptcha'
         ]);
-       $message =  Contact::create([
+        // Verify the reCAPTCHA response
+        $recaptcha = new GoogleRecaptcha();
+        $recaptcha->verifyResponse($request->input('g-recaptcha-response'));
+        $message =  Contact::create([
             'email' => $request->email,
             'name' =>  $request->name,
             'subject' =>  $request->subject,
@@ -56,6 +60,7 @@ class ContactController extends Controller
         }
 
         return redirect()->back()->with('success_message', 'We have received your message and will respond to you as soon as possible.');
+
     }
 
     /**

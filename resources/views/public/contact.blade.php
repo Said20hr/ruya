@@ -19,11 +19,13 @@
             </div>
         @else
             <div class="my-12">
-                  <form action="{{route('contact.store')}}" method="post" class="reveal-content">
-                    @csrf
+
                     <div class="grid grid-cols-1 xl:grid-cols-2 xl:gap-12 gap-6">
                         <div class="w-full">
-                            <div class="mb-6">
+                            <form action="{{route('contact.store')}}" method="post" class="reveal-content">
+                                @csrf
+                                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                                <div class="mb-6">
                                 <input type="text" name="name" class="form-control" id="name" placeholder="{{__('Name')}}">
                             </div>
                             <div class="mb-6">
@@ -36,7 +38,9 @@
                                 <textarea class="form-control" name="message" rows="3" placeholder="{{__('Enter your message')}}"></textarea>
                             </div>
                             <x-jet-button type="submit" class="bg-primary">{{__('Send')}}</x-jet-button>
+                            </form>
                         </div>
+
                         <div class="w-full">
                             <ul class="">
                                 @if(setting('site.EMAIL'))
@@ -103,7 +107,7 @@
                             @endif
                         </div>
                     </div>
-                </form>
+
             </div>
         @endif
     </div>

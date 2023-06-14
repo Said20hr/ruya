@@ -20,7 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 
-Route::prefix('{locale}')
+Route::prefix('{locale?}')
     ->where(['locale' => '[a-zA-Z]{2}'])
     ->middleware('setlocale')
     ->group(function () {

@@ -2,8 +2,6 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\User;
-use Carbon\Carbon;
 use Livewire\Component;
 use Spatie\Analytics\Period;
 use Analytics;

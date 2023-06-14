@@ -37,6 +37,7 @@
     <!-- Scripts -->
 
     <!-- Google tag (gtag.js) -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-256997728-1"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
